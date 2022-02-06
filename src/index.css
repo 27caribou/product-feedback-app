@@ -1,13 +1,185 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Jost', sans-serif;
+  /*background-color: #F7F8FD;*/
+  background-color: khaki;
+  color: #3A4374;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* GENERAL */
+
+h1 {
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 35px;
+  letter-spacing: -0.33px;
 }
+
+h2 {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 29px;
+  letter-spacing: -0.25px;
+}
+
+h3 {
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: -0.25px;
+}
+
+h4 {
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: -0.2px;
+}
+
+span {
+  display: inline-block;
+}
+
+/* GENERAL - END */
+
+/* COMMON CLASSES */
+
+.body-1 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 23px;
+}
+
+.body-2 {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+}
+
+.body-3 {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 19px;
+}
+
+.custom-btn {
+  border-radius: 8px;
+  padding: 10px 50px;
+  font-family: 'Jost', sans-serif;
+  color: white;
+  font-size: 14px;
+  border: 0;
+  transition: all 0.2s ease;
+}
+.custom-btn:hover {
+  cursor: pointer;
+}
+
+.purple {
+  background-color: #AD1FEA;
+}
+.purple:hover {
+  background-color: #C75AF6;
+}
+
+.blue {
+  background-color: #4661E6;
+}
+.blue:hover {
+  background-color: #7C91F9;
+}
+
+.dark {
+  background-color: #3A4374;
+}
+.dark:hover {
+  background-color: #656EA3;
+}
+
+.red {
+  background-color: #D73737;
+}
+.red:hover {
+  background-color: #E98888;
+}
+
+
+.card {
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* COMMON CLASSES - END */
+
+.app {
+  margin: 70px 120px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sidebar, .suggestion-list {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* CREATE A STANDARD DIV STYLE */
+
+/* SIDEBAR */
+
+.sidebar {
+  width: 20%;
+}
+
+.board-name {
+  color: white;
+  background-image: url('images/background-header-desktop.png');
+  background-size: cover;
+}
+
+.tag-list {
+  margin: 20px 0;
+}
+
+.tag-list span {
+  padding: 7px 10px;
+  background-color: lightsalmon;
+  margin: 7px;
+}
+
+.tag-list span:hover {
+  cursor: pointer;
+}
+
+.roadmap-sidebar .header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* SIDEBAR - END */
+
+/* SUGGESTIONS */
+
+.suggestion-list {
+  width: 77%;
+}
+
+.suggestion-header {
+  background: #373F68;
+  color: white;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedback {
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+/* SUGGESTONS - END */

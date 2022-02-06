@@ -5,6 +5,10 @@
 /.pnp
 .pnp.js
 
+*.sketch
+*.fig
+*.xd
+
 # testing
 /coverage
 
@@ -12,6 +16,7 @@
 /build
 
 # misc
+.idea
 .DS_Store
 .env.local
 .env.development.local

@@ -4,12 +4,12 @@ import Sidebar from "./components/Sidebar";
 import Suggestions from "./components/Suggestions";
 
 function App() {
-    const [ tag, setTag ] = useState('all')
+    const [ tag, setTag ] = useState('All')
     const [ sortBy, setSortBy ] = useState('')
 
   return (
     <div className="app">
-      <Sidebar chooseTag={ i => setTag(i) } />
+      <Sidebar current={tag} chooseTag={ i => setTag(i) } />
       <Suggestions />
     </div>
   );

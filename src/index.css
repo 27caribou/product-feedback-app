@@ -1,118 +1,3 @@
-body {
-  margin: 0;
-  font-family: 'Jost', sans-serif;
-  /*background-color: #F7F8FD;*/
-  background-color: khaki;
-  color: #3A4374;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-/* GENERAL */
-
-h1 {
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 35px;
-  letter-spacing: -0.33px;
-}
-
-h2 {
-  font-weight: bold;
-  font-size: 20px;
-  line-height: 29px;
-  letter-spacing: -0.25px;
-}
-
-h3 {
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 26px;
-  letter-spacing: -0.25px;
-}
-
-h4 {
-  font-weight: bold;
-  font-size: 14px;
-  line-height: 20px;
-  letter-spacing: -0.2px;
-}
-
-span {
-  display: inline-block;
-}
-
-/* GENERAL - END */
-
-/* COMMON CLASSES */
-
-.body-1 {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 23px;
-}
-
-.body-2 {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 22px;
-}
-
-.body-3 {
-  font-size: 13px;
-  font-weight: 600;
-  line-height: 19px;
-}
-
-.custom-btn {
-  border-radius: 8px;
-  padding: 10px 50px;
-  font-family: 'Jost', sans-serif;
-  color: white;
-  font-size: 14px;
-  border: 0;
-  transition: all 0.2s ease;
-}
-.custom-btn:hover {
-  cursor: pointer;
-}
-
-.purple {
-  background-color: #AD1FEA;
-}
-.purple:hover {
-  background-color: #C75AF6;
-}
-
-.blue {
-  background-color: #4661E6;
-}
-.blue:hover {
-  background-color: #7C91F9;
-}
-
-.dark {
-  background-color: #3A4374;
-}
-.dark:hover {
-  background-color: #656EA3;
-}
-
-.red {
-  background-color: #D73737;
-}
-.red:hover {
-  background-color: #E98888;
-}
-
-
-.card {
-  padding: 20px;
-  background-color: white;
-  border-radius: 10px;
-}
-
-/* COMMON CLASSES - END */
 
 .app {
   margin: 70px 120px;
@@ -125,12 +10,10 @@ span {
   vertical-align: top;
 }
 
-/* CREATE A STANDARD DIV STYLE */
-
 /* SIDEBAR */
 
 .sidebar {
-  width: 20%;
+  width: 23%;
 }
 
 .board-name {
@@ -144,13 +27,9 @@ span {
 }
 
 .tag-list span {
-  padding: 7px 10px;
-  background-color: lightsalmon;
-  margin: 7px;
-}
-
-.tag-list span:hover {
-  cursor: pointer;
+  color: #4661E6;
+  margin: 6px;
+  padding: 7px 15px;
 }
 
 .roadmap-sidebar .header {
@@ -159,12 +38,45 @@ span {
   margin-bottom: 20px;
 }
 
+.roadmap-sidebar .header h3 {
+  margin: 0;
+}
+
+.roadmap-sidebar .list ul {
+  padding-left: 20px;
+}
+
+.roadmap-sidebar .list li div {
+  color: #647196;
+  display: flex;
+  justify-content: space-between;
+}
+
+.roadmap-sidebar .list li .count {
+  font-weight: 600;
+}
+
+
+.roadmap-sidebar .list li:first-child::marker {
+  color: #F49F85;
+}
+
+.roadmap-sidebar .list li:nth-child(2)::marker {
+  color: #AD1FEA;
+}
+
+.roadmap-sidebar .list li:nth-child(3)::marker {
+  color: #AD1FEA;
+}
+
+
+
 /* SIDEBAR - END */
 
 /* SUGGESTIONS */
 
 .suggestion-list {
-  width: 77%;
+  width: 74.5%;
 }
 
 .suggestion-header {
@@ -180,6 +92,15 @@ span {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
+}
+
+.votes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.votes span {
+  margin-top: 10px;
 }
 
 /* SUGGESTONS - END */

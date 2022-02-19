@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import Icon from "./Icon";
+import SortSelect from "./SortSelect";
 
 const Suggestions = () => {
     const [ data, setData ] = useState( null )
+    const [ sort, setSort ] = useState( '123' )
     const [ pending, setPending ] = useState( true )
 
     useEffect(() => {
@@ -21,7 +23,7 @@ const Suggestions = () => {
         <span>image</span>
         <span>6 Suggestions</span>
         <span>Sort by</span>
-        <button className="custom-btn red">+ Add Feedback</button>
+        <button className="custom-btn purple">+ Add Feedback</button>
     </div>
 
     const noFeedback = <div className="no-feedback">
@@ -36,11 +38,12 @@ const Suggestions = () => {
             { pending && <h2>Fetching data...</h2> }
             { !pending && header }
 
-            <Icon name={'edit-feedback'} />
-
             { !pending && data.map( item => (
                 <div key={ JSON.stringify(item) } className="card feedback">
-                    <button>{ item.upvotes }</button>
+                    <span className="elem votes">
+                        <Icon name="arrow-up"/>
+                        <span>{ item.upvotes }</span>
+                    </span>
                     <span>{ item.title }</span>
                     <span>{ item.category }</span>
                     <span>{ item.comments != null ? item.comments.length : 0 } sms</span>

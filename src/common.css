@@ -2,8 +2,8 @@
 body {
     margin: 0;
     font-family: 'Jost', sans-serif;
-    /*background-color: #F7F8FD;*/
-    background-color: khaki;
+    background-color: #eef1fd;
+    /*background-color: khaki;*/
     color: #3A4374;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -97,8 +97,9 @@ span {
 
 .custom-btn {
     border-radius: 8px;
-    padding: 10px 50px;
+    padding: 10px 30px;
     font-family: 'Jost', sans-serif;
+    font-weight: 600;
     color: white;
     font-size: 14px;
     border: 0;
@@ -193,7 +194,6 @@ span {
 .custom-select.dark-mode > span {
     background-color: #373F68;
     color: white;
-    /*padding: 20px 35px 20px 15px;*/
 }
 
 .custom-select span .sort-value {

@@ -1,5 +1,5 @@
 
-const Sidebar = ({ current, chooseTag }) => {
+const Sidebar = ({ current, chooseTag, roadmapNumbers, openMap }) => {
 
     const home = <div className="card board-name">
         <h3>Frontend Mentor</h3>
@@ -16,13 +16,13 @@ const Sidebar = ({ current, chooseTag }) => {
     const roadmap = <div className="card roadmap-sidebar">
         <div className="header">
             <h3>Roadmap</h3>
-            <span><a href="#">View</a></span>
+            <span><a href="#" onClick={ openMap }>View</a></span>
         </div>
         <div className="list">
             <ul>
-                <li><div>Planned <span className="count">2</span></div></li>
-                <li><div>In-Progress <span className="count">3</span></div></li>
-                <li><div>Live <span className="count">1</span></div></li>
+                <li><div>Planned <span className="count">{roadmapNumbers.planned}</span></div></li>
+                <li><div>In-Progress <span className="count">{roadmapNumbers.inProgress}</span></div></li>
+                <li><div>Live <span className="count">{roadmapNumbers.live}</span></div></li>
             </ul>
         </div>
     </div>
@@ -30,10 +30,8 @@ const Sidebar = ({ current, chooseTag }) => {
     return (
         <div className='sidebar'>
             { home }
-            <div>
-                { tags }
-                { roadmap }
-            </div>
+            { tags }
+            { roadmap }
         </div>
     )
 }

@@ -1,9 +1,13 @@
 import Icon from "./Icon";
-import {useState} from "react";
+import { useState, useEffect} from "react";
 
-const SortSelect = ({ type, initial, options }) => {
+const SortSelect = ({ type, initial, options, update }) => {
 
     const [ selected, setSelected ] = useState( initial )
+
+    useEffect(() => {
+        update(selected)
+    }, [ selected ])
 
     const toggleOptions = () => {
         let select = document.querySelector('.custom-select')
@@ -22,7 +26,7 @@ const SortSelect = ({ type, initial, options }) => {
 
     // Adding tabindex to span, makes it focusable, so onBlur can work
     return (
-        <div className={`custom-select ${type}`}>
+        <div className={ type == 'dark' ? 'custom-select dark-mode' : 'custom-select' }>
             <span onClick={ toggleOptions } tabIndex="0" onBlur={ closeOptions }>
                 Sort by: <span className='sort-value'>{selected}</span>
                 <Icon name="arrow-down"/>

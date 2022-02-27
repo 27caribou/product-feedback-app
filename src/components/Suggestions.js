@@ -1,28 +1,25 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Icon from "./Icon";
 import SortSelect from "./SortSelect";
+import SuggestionList from "./SuggestionList";
 
-const Suggestions = () => {
-    const [ data, setData ] = useState( null )
-    const [ sort, setSort ] = useState( '123' )
-    const [ pending, setPending ] = useState( true )
+const Suggestions = ({ tag, data, isFetching }) => {
 
-    useEffect(() => {
-        fetch('http://localhost:8000/productRequests')
-            .then(res => {
-                return res.json()
-            })
-            .then(data => {
-                console.log(data)
-                setData(data)
-                setPending(false)
-            })
-    }, [])
+    const [ sort, setSort ] = useState( 'Most upvotes' )
 
     const header = <div className="card suggestion-header">
-        <span>image</span>
-        <span>6 Suggestions</span>
-        <span>Sort by</span>
+        <span className="icon">
+            <Icon name="suggestions"/>
+        </span>
+        <span className='suggestions-number'>{data.length} Suggestions</span>
+        <span>
+            <SortSelect
+                type='dark'
+                initial={ 'Most upvotes' }
+                options={[ 'Most upvotes', 'Least upvotes', 'Most comments', 'Least comments' ]}
+                update={ i => setSort(i) }
+            />
+        </span>
         <button className="custom-btn purple">+ Add Feedback</button>
     </div>
 
@@ -34,22 +31,15 @@ const Suggestions = () => {
     </div>
 
     return (
-        <div className='suggestion-list'>
-            { pending && <h2>Fetching data...</h2> }
-            { !pending && header }
+        <div className="suggestions">
+            { header }
 
-            { !pending && data.map( item => (
-                <div key={ JSON.stringify(item) } className="card feedback">
-                    <span className="elem votes">
-                        <Icon name="arrow-up"/>
-                        <span>{ item.upvotes }</span>
-                    </span>
-                    <span>{ item.title }</span>
-                    <span>{ item.category }</span>
-                    <span>{ item.comments != null ? item.comments.length : 0 } sms</span>
-                </div>
-            ))}
+            { isFetching
+                ? <h2>Fetching data...</h2>
+                : <SuggestionList sortType={sort} items={data} />
+            }
         </div>
     )
 }
+
 export default Suggestions

@@ -1,11 +1,11 @@
 
 .app {
-  margin: 70px 120px;
+  margin: 60px 120px;
   display: flex;
   justify-content: space-between;
 }
 
-.sidebar, .suggestion-list {
+.sidebar, .suggestions {
   display: inline-block;
   vertical-align: top;
 }
@@ -75,17 +75,32 @@
 
 /* SUGGESTIONS */
 
-.suggestion-list {
+.suggestions {
   width: 74.5%;
 }
 
 .suggestion-header {
+  padding: 15px;
   background: #373F68;
   color: white;
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
+
+.suggestion-header .icon {
+  padding: 6px 0 0 6px;
+}
+
+.suggestion-header .suggestions-number {
+  font-weight: 600;
+}
+
+.suggestion-header .custom-select.dark-mode > span {
+  padding: 0 40px 0 0;
+}
+
 
 .feedback {
   border-radius: 5px;

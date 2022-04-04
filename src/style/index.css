@@ -1,8 +1,16 @@
 
-.app {
-  margin: 60px 120px;
+#suggestions-page {
+  margin: 60px 130px;
   display: flex;
   justify-content: space-between;
+}
+
+#feedback-page {
+  margin: 60px 280px;
+}
+
+#new-feedback-page {
+  margin: 60px 340px;
 }
 
 .sidebar, .suggestions {
@@ -18,8 +26,22 @@
 
 .board-name {
   color: white;
-  background-image: url('images/background-header-desktop.png');
+  background-image: url('../images/background-header-desktop.png');
   background-size: cover;
+  padding-top: 70px;
+}
+
+.board-name h3, .board-name p {
+  margin: 0;
+}
+
+.board-name h3 {
+  margin-bottom: 3px;
+}
+
+.board-name p {
+  color: #E0D5FC;
+  font-size: 15px;
 }
 
 .tag-list {
@@ -86,6 +108,10 @@
   margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
+}
+
+.suggestion-header div:first-child {
+  display: flex;
   align-items: center;
 }
 
@@ -95,6 +121,7 @@
 
 .suggestion-header .suggestions-number {
   font-weight: 600;
+  margin: 0 40px 0 20px;
 }
 
 .suggestion-header .custom-select.dark-mode > span {
@@ -104,18 +131,81 @@
 
 .feedback {
   border-radius: 5px;
+  position: relative;
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
+  padding: 25px 30px;
 }
 
-.votes {
+.feedback .description {
+  /*position: absolute; For smaller screen */
+  flex-grow: 1;
+  margin: 0 30px;
+}
+
+.feedback h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.feedback p {
+  color: #647196;
+  margin: 5px 0 10px;
+  font-size: 14px;
+}
+
+.feedback .description .elem {
+  color: #4661E6;
+}
+
+.feedback .description .elem:hover {
+  background: #F2F4FF;
+  cursor: initial;
+}
+
+.feedback .votes {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: fit-content;
+  min-width: 18px;
 }
-.votes span {
+.feedback .votes span {
   margin-top: 10px;
 }
 
+.feedback .comments {
+  font-weight: 600;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.feedback .comments svg {
+  margin-right: 10px;
+}
+
+.no-feedback {
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  overflow: auto;
+}
+.no-feedback-inner {
+  display: block;
+  width: 50%;
+  margin: 100px auto;
+  text-align: center;
+}
+
+.no-feedback-icon {
+  margin-bottom: 40px;
+}
+
+.no-feedback-body {
+  color: #647196;
+  font-size: 15px;
+  line-height: 23px;
+  margin-bottom: 40px;
+}
 /* SUGGESTONS - END */

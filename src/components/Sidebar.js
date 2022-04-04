@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom";
 
 const Sidebar = ({ current, chooseTag, roadmapNumbers, openMap }) => {
 
@@ -16,7 +17,7 @@ const Sidebar = ({ current, chooseTag, roadmapNumbers, openMap }) => {
     const roadmap = <div className="card roadmap-sidebar">
         <div className="header">
             <h3>Roadmap</h3>
-            <span><a href="#" onClick={ openMap }>View</a></span>
+            <span><Link to="/roadmap">View</Link></span>
         </div>
         <div className="list">
             <ul>

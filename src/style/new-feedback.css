@@ -18,9 +18,27 @@
 }
 
 .field input, .field textarea {
-    resize: none;
     width: 100%;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
             box-sizing: border-box;
+}
+.field textarea {
+    resize: none;
+    height: 100px;
+}
+
+.field .error-message {
+    color: #D73737;
+    font-size: 14px;
+}
+
+.feedback-form .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.feedback-form .action-buttons .button-group button:nth-child(2) {
+    margin-left: 15px;
 }

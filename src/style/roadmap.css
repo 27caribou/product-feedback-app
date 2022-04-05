@@ -1,0 +1,93 @@
+
+.roadmap-header {
+    padding: 25px;
+    border-radius: 10px;
+    background: #373F68;
+    color: white;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.roadmap-header h3 {
+    margin: 0;
+}
+.roadmap-header .return {
+    padding: 5px 0;
+    font-size: 13px;
+}
+.roadmap-header .custom-btn.return span:before {
+    left: 0;
+    top: 2%;
+    color: white;
+}
+
+.request-groups {
+    display: flex;
+    justify-content: space-between;
+}
+
+.request-groups p, .request ul {
+    font-size: 13px;
+    color: #647196;
+}
+
+.request-groups > div {
+    width: 32%;
+}
+
+.request-groups > div h4 {
+    margin: 0 0 5px;
+}
+
+.request-groups > div.orange .request {
+    border-top: 6px solid #F49F85;
+}
+.request-groups > div.orange .request li::marker {
+    color: #F49F85;
+}
+.request-groups > div.purple .request {
+    border-top: 6px solid #AD1FEA;
+}
+.request-groups > div.purple .request li::marker {
+    color: #AD1FEA;
+}
+.request-groups > div.blue .request {
+    border-top: 6px solid #62BCFA;
+}
+.request-groups > div.blue .request li::marker {
+    color: #62BCFA;
+}
+
+.request {
+    margin-top: 25px;
+    border-radius: 7px;
+}
+
+.request ul {
+    margin: 0 0 7px;
+    padding-left: 16px;
+}
+
+.request p {
+    margin-bottom: 10px;
+}
+
+.request > .elem {
+    color: #4661E6;
+    cursor: initial;
+    margin-bottom: 15px;
+}
+.request > .elem:hover {
+    background-color: #F2F4FF;
+}
+
+.request .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.request .comments span, .request .votes span {
+    margin-left: 10px;
+}

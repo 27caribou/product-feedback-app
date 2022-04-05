@@ -13,10 +13,11 @@ const Suggestions = ({ data, isFetching, upvote }) => {
             <span className="icon">
                 <Icon name="suggestions"/>
             </span>
-                <span className='suggestions-number'>{data.length} Suggestions</span>
-                <span>
+            <span className='suggestions-number'>{data.length} Suggestions</span>
+            <span>
                 <SortSelect
                     type='dark'
+                    textBefore="Sort by:"
                     initial={ 'Most upvotes' }
                     options={[ 'Most upvotes', 'Least upvotes', 'Most comments', 'Least comments' ]}
                     update={ i => setSort(i) }

@@ -22,6 +22,9 @@ function App() {
                     <Route exact path="/new-feedback">
                         <FeedbackForm />
                     </Route>
+                    <Route exact path="/edit-feedback/:id">
+                        <FeedbackForm />
+                    </Route>
                 </Switch>
             </div>
         </Router>

@@ -101,7 +101,7 @@ const SingleFeedbackPage = () => {
                 <Link to="/">
                     <button className="custom-btn return-outline"><span>Go Back</span></button>
                 </Link>
-                <Link to="/comments">
+                <Link to={`/edit-feedback/${id}`}>
                     <button className="custom-btn blue">Edit Feedback</button>
                 </Link>
             </div>

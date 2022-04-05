@@ -119,17 +119,17 @@ span {
     cursor: initial;
 }
 
-.purple {
+.custom-btn.purple {
     background-color: #AD1FEA;
 }
-.purple:hover, .purple:disabled {
+.custom-btn.purple:hover, .custom-btn.purple:disabled {
     background-color: #C75AF6;
 }
 
-.blue {
+.custom-btn.blue {
     background-color: #4661E6;
 }
-.blue:hover, .blue:disabled {
+.custom-btn.blue:hover, .custom-btn.blue:disabled {
     background-color: #7C91F9;
 }
 

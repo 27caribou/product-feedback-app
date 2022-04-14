@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import MainPage from "./components/MainPage";
-import RoadmapPage from "./components/RoadmapPage";
-import SingleFeedbackPage from "./components/SingleFeedbackPage";
-import FeedbackForm from "./components/FeedbackForm";
+import SuggestionsPage from "./pages/SuggestionsPage";
+import FeedbackPage from "./pages/FeedbackPage";
+import RoadmapPage from "./pages/RoadmapPage";
+import FeedbackFormPage from "./pages/FeedbackFormPage";
 
 function App() {
     return (
@@ -11,19 +11,19 @@ function App() {
             <div className="app">
                 <Switch>
                     <Route exact path="/">
-                        <MainPage />
+                        <SuggestionsPage />
                     </Route>
                     <Route exact path="/feedback/:id">
-                        <SingleFeedbackPage />
+                        <FeedbackPage />
                     </Route>
                     <Route exact path="/roadmap">
                         <RoadmapPage />
                     </Route>
                     <Route exact path="/new-feedback">
-                        <FeedbackForm />
+                        <FeedbackFormPage />
                     </Route>
                     <Route exact path="/edit-feedback/:id">
-                        <FeedbackForm />
+                        <FeedbackFormPage />
                     </Route>
                 </Switch>
             </div>

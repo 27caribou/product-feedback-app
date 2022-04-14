@@ -1,0 +1,110 @@
+
+:root {
+    --box-size: 70px;
+    --ball-size: calc(var(--box-size) / 6);
+    --y-offset: calc(var(--box-size) *  0.218);
+    --x-offset: calc(var(--box-size) *  0.403);
+    --duration: 2s;
+    --color-1: rgba(94, 105, 159, 0.8);
+    --color-3: rgba(189, 69, 241, 0.8);
+    --color-2: rgba(192, 198, 217, 0.8);
+    --color-4: rgba(98, 188, 250, 0.8);
+    --bg-color: #F7F8FD;
+}
+
+.loader-wrapper {
+    z-index: 15;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--bg-color);
+}
+
+.loader {
+    width: var(--box-size);
+    height: var(--box-size);
+    /*background-color: #f6bfae;*/
+    position: relative;
+    transform: rotate(165deg);
+}
+
+.loader::before, .loader::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: var(--ball-size);
+    height: var(--ball-size);
+    border-radius: var(--ball-size);
+    /*background-color: #93b1c5;*/
+}
+
+.loader::before {
+    animation: before var(--duration) infinite;
+}
+.loader::after {
+    animation: after var(--duration) infinite;
+}
+
+@keyframes before {
+    0% {
+        box-shadow:
+            calc(var(--x-offset) * -1) var(--y-offset) var(--color-1),
+            var(--x-offset) calc(var(--y-offset) * -1) var(--color-3)
+        ;
+    }
+    35% {
+        width: var(--box-size);
+        box-shadow:
+            0 var(--y-offset) var(--color-1),
+            0 calc(var(--y-offset) * -1) var(--color-3)
+        ;
+    }
+    70% {
+        width: var(--ball-size);
+        box-shadow:
+            var(--x-offset) var(--y-offset) var(--color-1),
+            calc(var(--x-offset) * -1)  calc(var(--y-offset) * -1) var(--color-3)
+        ;
+    }
+    100% {
+        box-shadow:
+            calc(var(--x-offset) * -1) var(--y-offset) var(--color-1),
+            var(--x-offset) calc(var(--y-offset) * -1) var(--color-3)
+        ;
+    }
+}
+
+@keyframes after {
+    0% {
+        box-shadow:
+            var(--y-offset) var(--x-offset) var(--color-2),
+            calc(var(--y-offset) * -1) calc(var(--x-offset) * -1) var(--color-4)
+    ;
+    }
+    35% {
+        height: var(--box-size);
+        box-shadow:
+            var(--y-offset) 0 var(--color-2),
+            calc(var(--y-offset) * -1) 0 var(--color-4)
+        ;
+    }
+    70% {
+        height: var(--ball-size);
+        box-shadow:
+            var(--y-offset) calc(var(--x-offset) * -1) var(--color-2),
+            calc(var(--y-offset) * -1) var(--x-offset) var(--color-4)
+    ;
+    }
+    100% {
+        box-shadow:
+            var(--y-offset) var(--x-offset) var(--color-2),
+            calc(var(--y-offset) * -1) calc(var(--x-offset) * -1) var(--color-4)
+        ;
+    }
+}

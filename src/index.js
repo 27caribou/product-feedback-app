@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style/common.css';
+// import './style/common.css';
+import './styles/styles.css';
+import './styles/loader.css';
 import App from './App';
+import Test from "./Tests";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <App />
+        {/*<Test/>*/}
+    </React.StrictMode>,
+    document.getElementById('root')
 );
 

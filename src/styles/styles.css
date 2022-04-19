@@ -194,6 +194,11 @@ textarea {
     background-color: var(--color-tertiary);
     color: white;
 }
+.elem.disabled, .elem.disabled:active, .elem.disabled:hover {
+    cursor: initial;
+    pointer-events: none;
+    background-color: #E1E3EC94;
+}
 
 .votes {
     display: flex;
@@ -212,6 +217,13 @@ textarea {
 }
 .elem.active .votes svg path, .elem:active .votes svg path {
     stroke: white;
+}
+
+.elem.disabled .votes span, .elem:disabled .votes span {
+    color: #898383;
+}
+.elem.disabled .votes svg path, .elem:disabled .votes svg path {
+    stroke: #B7B3B3;
 }
 
 /* UPVOTES AND CATEGORY TAGS (ELEM) - END */
@@ -306,7 +318,6 @@ textarea {
     font-weight: 600;
     font-size: calc( var(--size-default) + 2px );
     color: var(--color-secondary);
-    cursor: pointer;
     transition: color 0.3s ease;
 }
 .comment-number:hover {
@@ -352,6 +363,13 @@ textarea {
 .feedback .feedback-body .elem:hover {
     background-color: #F2F4FF;
     cursor: initial;
+}
+
+.feedback .feedback-body.clickable {
+    cursor: pointer;
+}
+.feedback .feedback-body.clickable:hover h3 {
+    color: var(--color-tertiary);
 }
 
 /* FEEDBACK CARD - END */

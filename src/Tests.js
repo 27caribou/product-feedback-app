@@ -75,7 +75,7 @@ const Test = () => {
                             <Icon name="arrow-up"/><span>53</span>
                         </div>
                     </div>
-                    <div className="elem">
+                    <div className="elem disabled">
                         <div className="votes">
                             <Icon name="arrow-up"/><span>7</span>
                         </div>

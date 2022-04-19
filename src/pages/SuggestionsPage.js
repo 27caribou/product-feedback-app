@@ -1,7 +1,7 @@
 import "../styles/suggestions.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getRequests } from "../Server";
+import { getRequests, updateRequest } from "../Server";
 import { countComments, processText } from "../Helpers";
 import Icon from "./components/Icon";
 import CustomSelect from "./components/CustomSelect";
@@ -20,17 +20,19 @@ const SuggestionsPage = () => {
         getRequests().then( data => {
 
             let stats = {}
+            let suggestions = []
             data.forEach( item => {
-                if ( item.status == "suggestion" ) return
-
-                if ( stats[item.status] == null ){
+                if ( item.status == "suggestion" ) {
+                    suggestions.push(item)
+                }
+                else if ( stats[item.status] == null ){
                     stats[item.status] = 1
                 } else {
                     stats[item.status] += 1
                 }
             })
             setRoadmapStats(stats)
-            setData(data)
+            setData(suggestions)
 
             // Remove loader
             document.querySelector(".loader-wrapper").classList.add("hide")
@@ -41,19 +43,25 @@ const SuggestionsPage = () => {
     }, [])
 
     const upvoteSuggestion = (id) => {
+        let req
         for ( let item of data ) {
             if ( item.id == id ) {
-                item.upvotes += 1
+                req = item
                 break;
             }
         }
-        setData([ ...data ])
+
+        setState("updating")
+        updateRequest(id, { upvotes: req.upvotes + 1 }).then(() => {
+            req.upvotes += 1
+            setData([ ...data ])
+            setState("ready")
+        })
     }
 
     const getData = () => {
         // Filter by category
         let processed = data.filter( item => {
-            if ( item.status != "suggestion" ) return false
 
             if ( category == "all" )
                 return true
@@ -130,7 +138,10 @@ const SuggestionsPage = () => {
 
     const suggestionList = <div className="suggestions">
         { suggestions.map( item =>
-            <SuggestionItem key={`${item.id}, ${item.upvotes}`} item={ item } upvote={ upvoteSuggestion } />
+            <SuggestionItem
+                key={`${item.id}, ${item.upvotes}`} item={item} upvote={upvoteSuggestion}
+                canUpvote={ state == "ready" } canRedirect={true}
+            />
         ) }
     </div>
 

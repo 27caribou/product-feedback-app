@@ -16,11 +16,15 @@
     z-index: 15;
     width: 100vw;
     height: 100vh;
-    position: relative;
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--bg-color);
+    transition: opacity 0.4s ease;
+}
+.loader-wrapper.hide {
+    opacity: 0;
 }
 
 .loader {

@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-// import './style/common.css';
-import './styles/styles.css';
-import './styles/loader.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+// import "./style/common.css";
+import "./styles/styles.css";
+import "./styles/loader.css";
+import App from "./App";
 import Test from "./Tests";
 
 ReactDOM.render(
@@ -11,6 +11,6 @@ ReactDOM.render(
         <App />
         {/*<Test/>*/}
     </React.StrictMode>,
-    document.getElementById('root')
+    document.getElementById("root")
 );
 

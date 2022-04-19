@@ -1,0 +1,113 @@
+
+#suggestions-page .content {
+    width: 80%;
+    margin: 50px auto;
+}
+
+/* Common flex display */
+#suggestions-page .content, .sidebar .roadmap .header, .sidebar .roadmap .list li div, .mainbar .header, .mainbar .header > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar {
+    width: 23%;
+}
+.mainbar {
+    width: 74.5%;
+}
+
+.card:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+
+/* SIDEBAR */
+.sidebar .card {
+    padding: 20px;
+}
+
+.sidebar .title {
+    background-image: url('../images/background-header-desktop.png');
+    background-size: cover;
+    color: white;
+    padding-top: 50px;
+}
+
+.sidebar .categories {
+    line-height: 3em;
+}
+.sidebar .categories .elem {
+    margin-right: 8px;
+    line-height: initial;
+}
+
+.sidebar .roadmap .header {
+    margin-bottom: 15px;
+}
+.sidebar .roadmap .list ul {
+    padding-left: 18px;
+}
+.sidebar .roadmap .list li::marker {
+    font-size: 18px;
+}
+.sidebar .roadmap .list li:first-child::marker {
+    color: #F49F85;
+}
+.sidebar .roadmap .list li:nth-child(2)::marker {
+    color: #AD1FEA;
+}
+.sidebar .roadmap .list li:nth-child(3)::marker {
+    color: #62BCFA;
+}
+.sidebar .roadmap .list .count {
+    font-weight: 600;
+}
+/* SIDEBAR - END */
+
+/* MAINBAR */
+
+.mainbar .header {
+    background-color: #373F68;
+    padding: 15px;
+    color: white;
+}
+.mainbar .header .suggestions-number {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+}
+.mainbar .header .suggestions-number span {
+    margin-left: 14px;
+    font-weight: 600;
+}
+.mainbar .header .sort {
+    color: #C3C7D8;
+}
+.mainbar .header .sort > span {
+    font-weight: 200;
+}
+.mainbar .header .custom-select .current-option {
+    background-color: inherit;
+    color: inherit;
+    padding-left: 7px;
+    font-weight: 600;
+}
+.mainbar .header .custom-select .current-option svg path {
+    stroke: white;
+}
+.mainbar .header .custom-select.show .current-option {
+    box-shadow: none;
+}
+.mainbar .header .custom-select .dropdown {
+    margin-top: 27px;
+    left: -40%;
+    min-width: 250px;
+}
+
+
+
+
+
+/* MAINBAR - END */
+

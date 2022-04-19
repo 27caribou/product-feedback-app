@@ -36,7 +36,7 @@ export async function getRequest(id){
 
 export async function postRequest(req){
     const response = await fetch( url, {
-        method: 'POST',
+        method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(req)
     })
@@ -53,7 +53,7 @@ export async function postRequest(req){
 
 export async function updateRequest(id, data){
     const response = await fetch( `${url}/${id}`, {
-        method: 'PATCH',
+        method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)
     })
@@ -69,7 +69,7 @@ export async function updateRequest(id, data){
 }
 
 export async function deleteRequest(id){
-    const response = await fetch( `${url}/${id}`, { method: 'DELETE' })
+    const response = await fetch( `${url}/${id}`, { method: "DELETE" })
         .then( () => {
             return "Success"
         })

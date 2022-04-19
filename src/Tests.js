@@ -1,7 +1,7 @@
 import { getRequest, getRequests, postRequest, updateRequest } from "./Server";
 import { useEffect } from "react";
-import Icon from "./components/Icon";
-import CustomSelect from "./components/CustomSelect";
+import Icon from "./pages/components/Icon";
+import CustomSelect from "./pages/components/CustomSelect";
 
 const Test = () => {
 
@@ -121,20 +121,27 @@ const Test = () => {
                 </div>
             </div>
             <br/>
-            <div className="card feedback">
-                <div className="elem">
-                    <div className="votes">
-                        <Icon name="arrow-up"/><span>110</span>
+            <div className="card feedback" style={{ width: "67%"}}>
+                <div className="col">
+                    <div className="elem">
+                        <div className="votes">
+                            <Icon name="arrow-up"/><span>110</span>
+                        </div>
                     </div>
                 </div>
-                <div className="feedback-body">
-                    <h3>Q&A within the challenge hubs</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda corporis culpa eaque ipsum temporibus velit. Autem eligendi facilis maiores quos repellendus. Adipisci aspernatur eveniet, facere itaque molestias tempora voluptatum!</p>
+                <div className="col">
+                    <div className="feedback-body">
+                        <h3>Q&A within the challenge hubs</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad assumenda corporis culpa eaque ipsum temporibus velit. Autem eligendi facilis maiores quos repellendus. Adipisci aspernatur eveniet, facere itaque molestias tempora voluptatum!</p>
+                        <div className="elem">Enhancement</div>
+                    </div>
                 </div>
-                <div className="comment-number empty">
-                    <div>
-                        <Icon name="comments"/>
-                        <span>8</span>
+                <div className="col">
+                    <div className="comment-number empty">
+                        <div>
+                            <Icon name="comments"/>
+                            <span>8</span>
+                        </div>
                     </div>
                 </div>
             </div>

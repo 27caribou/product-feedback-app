@@ -1,9 +1,15 @@
 import Icon from "./Icon";
 import { useState, useEffect } from "react";
 
-const CustomSelect = ({ value, options }) => {
+const CustomSelect = ({ value, options, update }) => {
 
     const [ current, setCurrent ] = useState( value != null ? value : options[0] )
+
+    useEffect(() => {
+        if ( update != null ){
+            update(current)
+        }
+    }, [current])
 
     return (
         <div tabIndex="0" className="custom-select"
@@ -18,7 +24,7 @@ const CustomSelect = ({ value, options }) => {
                 { options.map( option =>
                     <li key={option} onClick={ () => setCurrent(option) }>
                         { option }
-                        { option === current ? <Icon name='check'/> : '' }
+                        { option === current ? <Icon name="check"/> : "" }
                     </li>
                 ) }
             </ul>

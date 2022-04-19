@@ -82,6 +82,8 @@ textarea {
             box-sizing: border-box;
 }
 
+/* GENERAL - END */
+
 
 .card {
     padding: 30px;
@@ -220,7 +222,6 @@ textarea {
     display: inline-block;
     position: relative;
     font-size: var(--size-default);
-    min-width: 200px;
 }
 
 .custom-select .current-option {
@@ -230,6 +231,9 @@ textarea {
     border-radius: 8px;
     transition: all 0.3s ease;
     cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     /* MAKE THEM UNSELECTABLE */
     -webkit-touch-callout: none;
@@ -243,22 +247,8 @@ textarea {
     box-shadow: 0 0 0 2px var(--color-tertiary)
 }
 
-.custom-select.is-sort {
-    min-width: 220px;
-}
-.custom-select.is-sort .current-option {
-    background-color: #373F68;
-    color: white;
-    font-weight: 600;
-}
-.custom-select.is-sort .current-option span {
-    font-weight: 300;
-}
-
-
 .custom-select .current-option .inner {
-    display: inline-block;
-    width: 92%;
+    margin-right: 10px;
 }
 
 .custom-select .current-option svg {
@@ -272,6 +262,8 @@ textarea {
 .custom-select .dropdown {
     z-index: 3;
     list-style-type: none;
+    color: var(--color-primary);
+    min-width: 200px;
     padding: 0;
     background-color: white;
     font-weight: 400;
@@ -337,15 +329,32 @@ textarea {
 
 /* COMMENT NUMBER - END */
 
+
+/* FEEDBACK CARD */
+
 .feedback {
+    padding: 24px;
+    display: grid;
+    grid-template-columns: 1fr 13fr 1fr;
+    column-gap: 25px;
+}
+.feedback .col:last-child {
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
-.feedback .feedback-body {
-    width: 83%;
+.feedback .feedback-body h3 {
+    color: var(--color-secondary);
 }
+.feedback .feedback-body p {
+    margin: 5px 0 12px;
+}
+.feedback .feedback-body .elem:hover {
+    background-color: #F2F4FF;
+    cursor: initial;
+}
+
+/* FEEDBACK CARD - END */
 
 /* COMMENT THREAD */
 

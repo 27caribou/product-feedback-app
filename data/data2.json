@@ -283,14 +283,6 @@
           ]
         }
       ]
-    },
-    {
-      "title": "Another title",
-      "category": "bug",
-      "upvotes": 12,
-      "status": "live",
-      "description": "I changed the description",
-      "id": 13
     }
   ]
 }

@@ -159,9 +159,12 @@ textarea {
     background-color: transparent;
     /*border: 1px solid #373F68;*/
 }
-.custom-btn.return.outline, .custom-btn.return.outline:after {
-    color: var(--color-secondary);
+.custom-btn.return.outline {
+    color: var(--color-primary);
     font-weight: bold;
+}
+.custom-btn.return.outline:after {
+    color: var(--color-tertiary);
 }
 
 /* CUSTOM BUTTONS - END */
@@ -354,8 +357,12 @@ textarea {
     align-items: center;
 }
 
-.feedback .feedback-body h3 {
+.feedback .feedback-body h3, .feedback .feedback-body h3 a {
     color: var(--color-secondary);
+    text-decoration: none;
+}
+.feedback .feedback-body h3 a:hover {
+    color: var(--color-tertiary);
 }
 .feedback .feedback-body p {
     margin: 5px 0 12px;
@@ -365,39 +372,26 @@ textarea {
     cursor: initial;
 }
 
-.feedback .feedback-body.clickable {
-    cursor: pointer;
-}
-.feedback .feedback-body.clickable:hover h3 {
-    color: var(--color-tertiary);
-}
-
 /* FEEDBACK CARD - END */
 
 /* COMMENT THREAD */
 
 .feedback-comment .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-    margin-bottom: 20px;
+    display: grid;
+    grid-template-columns: 2fr 17fr 1fr;
 }
-
+.feedback-comment .header .col {
+    display: flex;
+    align-items: center;
+}
 .feedback-comment .header .profile-pic img {
     border-radius: 65%;
-    width: 50%;
+    width: 60%;
 }
-
-.feedback-comment .header .names {
-    width: 82%;
-}
-
 .feedback-comment .header .names h4 {
     color: var(--color-secondary);
-    line-height: 24px;
+    line-height: 22px;
 }
-
 .feedback-comment .header .reply a {
     text-decoration: none;
     font-weight: 600;
@@ -407,18 +401,20 @@ textarea {
 }
 
 .feedback-comment .body {
-    /*border-left: 1px solid #F5F7F8;*/
-    border-left: 1px solid #d8dbdc;
-    width: 97%;
-    margin-right: 0;
-    margin-left: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(20, 1fr);
+}
+.feedback-comment .body .row:first-child {
+    grid-column: 3 / 21;
+}
+.feedback-comment .body .row:nth-child(2) {
+    grid-column: 2 / 21;
+}
+.feedback-comment .body .description {
+    padding: 15px 0 25px;
 }
 
-.feedback-comment .body .description {
-    width: 90%;
-    margin-right: 0;
-    margin-left: auto;
-}
 
 /* COMMENT THREAD - END */
 

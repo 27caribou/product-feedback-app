@@ -133,7 +133,7 @@ const SuggestionsPage = () => {
                 />
             </span>
         </div>
-        <button className="custom-btn purple">+ Add Feedback</button>
+        <Link to="/new-feedback"><button className="custom-btn purple">+ Add Feedback</button></Link>
     </div>
 
     const suggestionList = <div className="suggestions">
@@ -145,9 +145,16 @@ const SuggestionsPage = () => {
         ) }
     </div>
 
+    const noSuggestions = <div className="card no-feedback">
+        <Icon name="no-suggestions"/>
+        <h2>There is no feedback yet.</h2>
+        <p>Got a suggestion? Found a bug that needs to be squashed? We love hearing about new ideas to improve our app.</p>
+        <Link to="/new-feedback"><button className="custom-btn purple">+ Add Feedback</button></Link>
+    </div>
+
     const mainbar = <section className="mainbar">
         {mainbarHeader}
-        {suggestionList}
+        { data.length > 0 ? suggestionList : noSuggestions }
     </section>
 
 

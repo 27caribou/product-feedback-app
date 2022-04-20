@@ -1,6 +1,23 @@
 
 // Using a JSON Server
 var url = "http://localhost:8000/productRequests"
+var userData = "http://localhost:8000/currentUser"
+
+export async function getUserdata(){
+    const response = await fetch(userData)
+        .then( res => {
+            return res.json()
+        })
+        .then( data => {
+            return data
+        })
+        .catch( err => {
+            // console.log(err)
+            console.log("GET Error")
+        })
+
+    return response
+}
 
 export async function getRequests(){
     const response = await fetch(url)

@@ -1,0 +1,14 @@
+
+#feedback-page .content {
+    width: 50%;
+    margin: 70px auto;
+}
+
+#feedback-page .content .links {
+    display: flex;
+    justify-content: space-between;
+}
+
+#feedback-page .content .feedback {
+    margin: 20px 0;
+}

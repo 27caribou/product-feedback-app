@@ -1,15 +1,8 @@
 import Icon from "./Icon";
 import { countComments, processText } from "../../Helpers";
-import { useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const SuggestionItem = ({ item, upvote, canUpvote, canRedirect }) => {
-
-    let history = useHistory()
-    const redirect = (id) => {
-        if ( canRedirect ){
-            history.push(`/feedback/${id}`)
-        }
-    }
 
     return (
         <div className="card feedback">
@@ -21,8 +14,13 @@ const SuggestionItem = ({ item, upvote, canUpvote, canRedirect }) => {
                 </div>
             </div>
             <div className="col">
-                <div className={`feedback-body${ canRedirect ? " clickable" : "" }`} onClick={ () => redirect(item.id) }>
-                    <h3>{ item.title }</h3>
+                <div className="feedback-body">
+                    <h3>
+                        { canRedirect
+                            ? <Link to={`/feedback/${item.id}`}>{ item.title }</Link>
+                            : item.title
+                        }
+                    </h3>
                     <p>{ item.description }</p>
                     <div className="elem">{ processText(item.category) }</div>
                 </div>

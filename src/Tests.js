@@ -146,23 +146,37 @@ const Test = () => {
                 </div>
             </div>
             <br/>
-            <div style={{ backgroundColor: "white", padding: "20px", margin: "0 145px" }}>
+            <div className="card" style={{ margin: "0 145px" }}>
                 <div className="feedback-comment">
                     <div className="header">
-                        <div className="profile-pic">
-                            <img src={ require("./images/user-images/" + "image-james.jpg") } />
+                        <div className="col">
+                            <div className="profile-pic">
+                                <img src={ require("./images/user-images/" + "image-james.jpg") } />
+                            </div>
                         </div>
-                        <div className="names">
-                            <h4>James Skinner</h4>
-                            <p>@hummingbird1</p>
+                        <div className="col">
+                            <div className="names">
+                                <h4>James Skinner</h4>
+                                <p>@hummingbird1</p>
+                            </div>
                         </div>
-                        <div className="reply">
-                            <a href="#">Reply</a>
+                        <div className="col">
+                            <div className="reply">
+                                <a href="#">Reply</a>
+                            </div>
                         </div>
                     </div>
                     <div className="body">
-                        <div className="description">
-                            <p>Second this! I do a lot of late night coding and reading. Adding a dark theme can be great for preventing eye strain and the headaches that result. It’s also quite a trend with modern apps and  apparently saves battery life.</p>
+                        <div className="row">
+                            <div className="description">
+                                <p>Second this! I do a lot of late night coding and reading. Adding a dark theme can be great for preventing eye strain and the headaches that result. It’s also quite a trend with modern apps and  apparently saves battery life.</p>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="replies">
+                                <div className="reply">Reply1</div>
+                                <div className="reply">Reply2</div>
+                            </div>
                         </div>
                     </div>
                 </div>

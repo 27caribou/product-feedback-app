@@ -376,9 +376,16 @@ textarea {
 
 /* COMMENT THREAD */
 
+.feedback-comment:not(.is-reply) {
+    padding: 30px 0;
+}
+.feedback-comment:not(.is-reply):not(:nth-of-type(1)) {
+    border-top: 1.4px solid #E2E4EC;
+}
+
 .feedback-comment .header {
     display: grid;
-    grid-template-columns: 2fr 17fr 1fr;
+    grid-template-columns: 3fr 20fr 2fr;
 }
 .feedback-comment .header .col {
     display: flex;
@@ -386,7 +393,7 @@ textarea {
 }
 .feedback-comment .header .profile-pic img {
     border-radius: 65%;
-    width: 60%;
+    width: 55%;
 }
 .feedback-comment .header .names h4 {
     color: var(--color-secondary);
@@ -403,18 +410,55 @@ textarea {
 .feedback-comment .body {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(20, 1fr);
+    grid-template-columns: repeat(25, 1fr);
+    margin-top: 15px;
 }
-.feedback-comment .body .row:first-child {
-    grid-column: 3 / 21;
+.feedback-comment .body .description, .reply-form {
+    grid-column: 4 / 26;
 }
-.feedback-comment .body .row:nth-child(2) {
-    grid-column: 2 / 21;
-}
-.feedback-comment .body .description {
-    padding: 15px 0 25px;
+.feedback-comment .body .replies {
+    grid-column: 3 / 26;
 }
 
+.feedback-comment.is-reply .body .description .replying-to {
+    color: #AD1FEA;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+.feedback-comment .body .reply-form {
+    margin-top: 20px;
+}
+.feedback-comment .body .reply-form div {
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    row-gap: 15px;
+    column-gap: 15px;
+}
+.feedback-comment .body .reply-form textarea {
+    grid-column: 1 / 12;
+    grid-row: 1 / 5;
+}
+.feedback-comment .body .reply-form button {
+    padding: 12px;
+    grid-column: 12 / 16;
+}
+
+.feedback-comment .body .replies:before {
+    content: "";
+    background-color: #EFF1F4;
+    display: inline-block;
+    width: 0.21%;
+    position: absolute;
+    /* MAKE REPLIES DIV POSITION RELATIVE, THEN CHANGE TOP & LEFT TO REPOSITION :BEFORE ELEMENT */
+    top: 0;
+    left: 3%;
+    /* Height of comment is approx. 140px, image is approx. 40px*/
+    bottom: 120px;
+}
+.feedback-comment .body .replies .is-reply {
+    margin-top: 30px;
+}
 
 /* COMMENT THREAD - END */
 

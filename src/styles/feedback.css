@@ -4,6 +4,10 @@
     margin: 70px auto;
 }
 
+#feedback-page .content .card h3 {
+    color: var(--color-secondary)
+}
+
 #feedback-page .content .links {
     display: flex;
     justify-content: space-between;
@@ -11,4 +15,14 @@
 
 #feedback-page .content .feedback {
     margin: 20px 0;
+}
+
+#feedback-page .content .post-comment textarea {
+    margin: 20px 0;
+    width: 100%;
+}
+
+#feedback-page .content .post-comment div {
+    display: flex;
+    justify-content: space-between;
 }

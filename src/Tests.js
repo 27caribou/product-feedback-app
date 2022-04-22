@@ -146,7 +146,7 @@ const Test = () => {
                 </div>
             </div>
             <br/>
-            <div className="card" style={{ margin: "0 145px" }}>
+            <div className="card" style={{ margin: "0 165px" }}>
                 <div className="feedback-comment">
                     <div className="header">
                         <div className="col">
@@ -167,15 +167,85 @@ const Test = () => {
                         </div>
                     </div>
                     <div className="body">
-                        <div className="row">
-                            <div className="description">
+                        <div className="description">
+                            <div>
                                 <p>Second this! I do a lot of late night coding and reading. Adding a dark theme can be great for preventing eye strain and the headaches that result. It’s also quite a trend with modern apps and  apparently saves battery life.</p>
                             </div>
                         </div>
-                        <div className="row">
-                            <div className="replies">
-                                <div className="reply">Reply1</div>
-                                <div className="reply">Reply2</div>
+                        <div className="reply-form">
+                            <div>
+                                <textarea placeholder="Type your comment here"></textarea>
+                                <button className="custom-btn purple">Post Reply</button>
+                            </div>
+                        </div>
+                        <div className="replies">
+                            <div>
+                                <div className="feedback-comment is-reply">
+                                    <div className="header">
+                                        <div className="col">
+                                            <div className="profile-pic">
+                                                <img src={ require("./images/user-images/" + "image-anne.jpg") } />
+                                            </div>
+                                        </div>
+                                        <div className="col">
+                                            <div className="names">
+                                                <h4>Anne Valentine</h4>
+                                                <p>@annev1990</p>
+                                            </div>
+                                        </div>
+                                        <div className="col">
+                                            <div className="reply">
+                                                <a href="#">Reply</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="body">
+                                        <div className="description">
+                                            <div>
+                                                <p>
+                                                    <span className="replying-to">@hummingbird1</span>
+                                                    While waiting for dark mode, there are browser extensions that will also do the job. Search for 'dark theme' followed by your browser. There might be a need to turn off the extension for sites with naturally black backgrounds though.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="feedback-comment is-reply">
+                                    <div className="header">
+                                        <div className="col">
+                                            <div className="profile-pic">
+                                                <img src={ require("./images/user-images/" + "image-ryan.jpg") } />
+                                            </div>
+                                        </div>
+                                        <div className="col">
+                                            <div className="names">
+                                                <h4>Ryan Welles</h4>
+                                                <p>@voyager.344</p>
+                                            </div>
+                                        </div>
+                                        <div className="col">
+                                            <div className="reply">
+                                                <a href="#">Reply</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="body">
+                                        <div className="description">
+                                            <div>
+                                                <p>
+                                                    <span className="replying-to">@annev1990</span>
+                                                    Good point! Using any kind of style extension is great and can be highly customizable, like the ability to change contrast and brightness. I'd prefer not to use one of such extensions, however, for security and privacy reasons.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div className="reply-form">
+                                            <div>
+                                                <textarea placeholder="Type your comment here"></textarea>
+                                                <button className="custom-btn purple">Post Reply</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>

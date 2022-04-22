@@ -1,20 +1,22 @@
 import "../styles/feedback.css";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getRequest, getUserdata } from "../Server";
+import { getRequest, getUserdata, updateRequest } from "../Server";
 import SuggestionItem from "./components/SuggestionItem";
-import {countComments} from "../Helpers";
+import { countComments } from "../Helpers";
+import Comment from "./components/Comment";
 
 
 const FeedbackPage = () => {
 
     const [ state, setState ] = useState("fetching")
+    const [ user, setUser ] = useState({})
     const [ feedback, setFeedback ] = useState({})
+    const [ newComment, setNewComment ] = useState("")
     const { id } = useParams()
-    let userData = {}
 
     useEffect(() => {
-        getUserdata().then( data => userData = data )
+        getUserdata().then( data => setUser(data) )
 
         getRequest(id).then(data => {
             setFeedback(data)
@@ -27,8 +29,24 @@ const FeedbackPage = () => {
         })
     }, [])
 
-    const upvoteSuggestion = (id) => {
-        console.log("Upvoting " + id)
+    const upvoteSuggestion = () => {
+        setState("updating")
+        updateRequest(id, { upvotes: feedback.upvotes + 1 }).then(() => {
+            feedback.upvotes += 1
+            setFeedback({ ...feedback })
+            setState("ready")
+        })
+    }
+
+    const postComment = () => {
+        setState("updating")
+        let commentList = [ ...feedback.comments, { content: newComment, user: user } ]
+        updateRequest(id, { comments: commentList }).then(() => {
+            feedback.comments = commentList
+            setFeedback({ ...feedback })
+            setState("ready")
+            setNewComment("")
+        })
     }
 
     const links = <div className="links">
@@ -40,20 +58,33 @@ const FeedbackPage = () => {
         </Link>
     </div>
 
-    const renderComment = (comment) => (
-        <div className="feedback-comment">
-
-        </div>
-    )
-
     const comments = <div className="card comments">
         <h3>{countComments(feedback)} Comments</h3>
+        { feedback.comments != null && feedback.comments.map( (comment, index) =>
+            <Comment key={index} data={comment}/>
+        ) }
+    </div>
+
+    const replyForm = <div className="card post-comment">
+        <h3>Add Comment</h3>
+        <textarea
+            placeholder="Type your comment here" maxLength={250}
+            value={newComment} onChange={ e => setNewComment(e.target.value) }
+        ></textarea>
+        <div>
+            <span>{250-newComment.length} characters left</span>
+            <button
+                className="custom-btn purple" onClick={postComment}
+                disabled={ newComment.length == 0 || state == "updating" }
+            >Post Comment</button>
+        </div>
     </div>
 
     const content = <div className="content">
         {links}
         <SuggestionItem item={feedback} upvote={upvoteSuggestion} canUpvote={ state == "ready" } />
         {comments}
+        {replyForm}
     </div>
 
     return <div id="feedback-page">

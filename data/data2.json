@@ -9,7 +9,7 @@
       "id": 1,
       "title": "Add tags for solutions",
       "category": "enhancement",
-      "upvotes": 121,
+      "upvotes": 125,
       "status": "suggestion",
       "description": "Easier to search for solutions based on a specific stack.",
       "comments": [
@@ -45,7 +45,18 @@
             "image": "image-elijah.jpg",
             "name": "Elijah Moss",
             "username": "hexagon.bestagon"
-          }
+          },
+          "replies": [
+            {
+              "content": "lokiv",
+              "user": {
+                "image": "image-zena.jpg",
+                "name": "Zena Kelley",
+                "username": "velvetround"
+              },
+              "replyingTo": "hexagon.bestagon"
+            }
+          ]
         },
         {
           "content": "Second this! I do a lot of late night coding and reading. Adding a dark theme can be great for preventing eye strain and the headaches that result. It’s also quite a trend with modern apps and  apparently saves battery life.",
@@ -72,6 +83,24 @@
                 "name": "Ryan Welles",
                 "username": "voyager.344"
               }
+            },
+            {
+              "content": "What is this guy saying",
+              "user": {
+                "image": "image-zena.jpg",
+                "name": "Zena Kelley",
+                "username": "velvetround"
+              },
+              "replyingTo": "voyager.344"
+            },
+            {
+              "content": "Nice idea! We should really consider that",
+              "user": {
+                "image": "image-zena.jpg",
+                "name": "Zena Kelley",
+                "username": "velvetround"
+              },
+              "replyingTo": "hummingbird1"
             }
           ]
         }

@@ -453,8 +453,8 @@ textarea {
     /* MAKE REPLIES DIV POSITION RELATIVE, THEN CHANGE TOP & LEFT TO REPOSITION :BEFORE ELEMENT */
     top: 0;
     left: 3%;
-    /* Height of comment is approx. 140px, image is approx. 40px*/
-    bottom: 120px;
+    /* Height of comment is min. approx. 80px, image is approx. 40px*/
+    bottom: 50px;
 }
 .feedback-comment .body .replies .is-reply {
     margin-top: 30px;

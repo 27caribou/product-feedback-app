@@ -49,6 +49,33 @@ const FeedbackPage = () => {
         })
     }
 
+    const postReply = ( reply, commentIndex, replyIndex = -1 ) => {
+        setState("updating")
+
+        let replyObj = { content: reply, user: user }
+        let comment = feedback.comments[commentIndex]
+        if ( replyIndex != -1 ) {
+            replyObj["replyingTo"] = feedback.comments[commentIndex].replies[replyIndex].user.username
+        } else {
+            replyObj["replyingTo"] = feedback.comments[commentIndex].user.username
+        }
+
+        if ( replyIndex != -1 ) {
+            comment.replies.splice( replyIndex + 1, 0, replyObj )
+        } else if ( feedback.comments[commentIndex].replies != null ){
+            comment.replies.push( replyObj )
+        } else {
+            comment.replies = [ replyObj ]
+        }
+
+        let commentList = [ ...feedback.comments ]
+        updateRequest(id, { comments: commentList }).then(() => {
+            feedback.comments = commentList
+            setFeedback({ ...feedback })
+            setState("ready")
+        })
+    }
+
     const links = <div className="links">
         <Link to="/">
             <button className="custom-btn return outline">Go Back</button>
@@ -61,14 +88,14 @@ const FeedbackPage = () => {
     const comments = <div className="card comments">
         <h3>{countComments(feedback)} Comments</h3>
         { feedback.comments != null && feedback.comments.map( (comment, index) =>
-            <Comment key={index} data={comment}/>
+            <Comment key={index} data={comment} postReply={ (reply, replyIndex) => postReply(reply, index, replyIndex) }/>
         ) }
     </div>
 
     const replyForm = <div className="card post-comment">
         <h3>Add Comment</h3>
         <textarea
-            placeholder="Type your comment here" maxLength={250}
+            placeholder="Type your comment here" maxLength={250} rows={3}
             value={newComment} onChange={ e => setNewComment(e.target.value) }
         ></textarea>
         <div>

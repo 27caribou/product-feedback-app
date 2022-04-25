@@ -1,13 +1,24 @@
 import { useState } from "react";
 
-const Comment = ({ data, isReply = false }) => {
+const Comment = ({ data, isReply = false, postReply }) => {
 
     const [ showReplyForm, setShowReplyForm ] = useState(false)
+    const [ reply, setReply ] = useState("")
 
     const replyForm = <div className="reply-form">
         <div>
-            <textarea placeholder="Type your comment here" maxLength={250}></textarea>
-            <button className="custom-btn purple">Post Reply</button>
+            <textarea
+                placeholder="Type your comment here" maxLength={250}
+                onChange={ e => setReply(e.target.value) }
+            ></textarea>
+            <button
+                className="custom-btn purple"
+                onClick={ () => {
+                    postReply(reply)
+                    setShowReplyForm(false)
+                    setReply("")
+                } } disabled={ reply.length == 0 }
+            >Post Reply</button>
         </div>
     </div>
 
@@ -43,7 +54,9 @@ const Comment = ({ data, isReply = false }) => {
                 { showReplyForm && replyForm }
                 { data.replies != null && <div className="replies">
                     <div>
-                        { data.replies.map( reply => <Comment key={reply.content} data={reply} isReply={true}/> )}
+                        { data.replies.map( (reply, index) =>
+                            <Comment key={reply.content} data={reply} isReply={true} postReply={ reply => postReply(reply, index)}/>
+                        ) }
                     </div>
                 </div> }
             </div>

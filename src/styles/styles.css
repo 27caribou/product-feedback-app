@@ -25,7 +25,7 @@ body {
 }
 
 h1 {
-    font-size: calc( var(--size-default) + 6px );
+    font-size: calc( var(--size-default) + 8px );
     line-height: 35px;
     letter-spacing: -0.33px;
 }
@@ -66,6 +66,10 @@ input[type=text], textarea {
     padding: 15px 25px;
     font-size: var(--size-default);
     transition: all 0.3s ease;
+    resize: none;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
 }
 input[type=text]:focus, textarea:focus {
     outline: none;
@@ -73,13 +77,6 @@ input[type=text]:focus, textarea:focus {
 }
 input[type=text].error, textarea.error {
     box-shadow: 0 0 0 1px #D73737;
-}
-
-textarea {
-    resize: none;
-    -webkit-box-sizing: border-box;
-       -moz-box-sizing: border-box;
-            box-sizing: border-box;
 }
 
 /* GENERAL - END */
@@ -157,6 +154,7 @@ textarea {
 
 .custom-btn.return.outline {
     background-color: transparent;
+    padding-left: 0;
     /*border: 1px solid #373F68;*/
 }
 .custom-btn.return.outline {
@@ -165,6 +163,7 @@ textarea {
 }
 .custom-btn.return.outline:after {
     color: var(--color-tertiary);
+    left: 0;
 }
 
 /* CUSTOM BUTTONS - END */

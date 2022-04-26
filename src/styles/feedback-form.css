@@ -1,5 +1,59 @@
 
 #feedback-form-page .content {
-    width: 50%;
+    width: 40%;
     margin: 70px auto;
+}
+
+#feedback-form-page .content .card {
+    margin-top: 50px;
+    padding: 40px;
+    position: relative;
+}
+
+#feedback-form-page .content .card > svg {
+    position: absolute;
+    top: -28px;
+}
+
+#feedback-form-page .content h1 {
+    margin: 20px 0 35px;
+    color: var(--color-secondary);
+}
+
+#feedback-form-page .content .field {
+    margin-bottom: 30px;
+}
+
+#feedback-form-page .content .field label {
+    color: var(--color-secondary);
+    font-weight: 800;
+}
+
+#feedback-form-page .content .field p {
+    margin-bottom: 10px;
+}
+
+#feedback-form-page .content .field input,
+#feedback-form-page .content .field textarea,
+#feedback-form-page .content .field .custom-select {
+    width: 100%;
+}
+#feedback-form-page .content .field input,
+#feedback-form-page .content .field textarea {
+    margin-bottom: 5px;
+    padding: 15px 20px;
+}
+
+#feedback-form-page .content .field .error-message {
+    color: #D73737;
+}
+
+#feedback-form-page .content .buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+#feedback-form-page .content .buttons a {
+    margin-right: 15px;
 }

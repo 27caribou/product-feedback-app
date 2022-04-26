@@ -6,6 +6,7 @@ import RoadmapPage from "./pages/RoadmapPage";
 import FeedbackFormPage from "./pages/FeedbackFormPage";
 
 function App() {
+    // CONSIDER CASE WHEN WRONG URL IS PASSED
     return (
         <Router>
             <div className="app">

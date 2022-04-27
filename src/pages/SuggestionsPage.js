@@ -2,7 +2,7 @@ import "../styles/suggestions.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { getRequests, updateRequest } from "../Server";
-import { countComments, processText } from "../Helpers";
+import { countComments, capitalize } from "../Helpers";
 import Icon from "./components/Icon";
 import CustomSelect from "./components/CustomSelect";
 import SuggestionItem from "./components/SuggestionItem";
@@ -35,10 +35,13 @@ const SuggestionsPage = () => {
             setData(suggestions)
 
             // Remove loader
-            document.querySelector(".loader-wrapper").classList.add("hide")
-            setTimeout(() => {
-                setState("ready")
-            }, 450)
+            let loader = document.querySelector(".loader-wrapper")
+            if ( loader != null ){
+                loader.classList.add("hide")
+                setTimeout(() => {
+                    setState("ready")
+                }, 450)
+            }
         })
     }, [])
 
@@ -91,7 +94,7 @@ const SuggestionsPage = () => {
     const categories = <div className="card categories">
         { ["all", "ui", "ux", "enhancement", "bug", "feature"].map( item =>
             <div key={item} className={`elem${ category == item ? " active" : ""}`} onClick={ () => setCategory(item) }>
-                {processText(item)}
+                {capitalize(item)}
             </div>
         )}
     </div>
@@ -104,7 +107,7 @@ const SuggestionsPage = () => {
         <div className="list">
             <ul>
                 { Object.keys(roadmapStats).map( key =>
-                    <li key={key}><div>{processText(key)} <span className="count">{roadmapStats[key]}</span></div></li>
+                    <li key={key}><div>{capitalize(key)} <span className="count">{roadmapStats[key]}</span></div></li>
                 ) }
             </ul>
         </div>

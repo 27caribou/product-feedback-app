@@ -77,12 +77,19 @@
     align-items: center;
     margin-right: 25px;
 }
+.mainbar .header .suggestions-number svg {
+    width: 27px;
+    height: 27px;
+}
 .mainbar .header .suggestions-number span {
     margin-left: 14px;
     font-weight: 600;
 }
 .mainbar .header .sort {
     color: #C3C7D8;
+}
+.mainbar .header .sort:hover {
+    color: white;
 }
 .mainbar .header .sort > span {
     font-weight: 200;

@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import "./style/common.css";
 import "./styles/styles.css";
 import "./styles/loader.css";
 import App from "./App";

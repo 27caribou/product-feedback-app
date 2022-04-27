@@ -13,6 +13,8 @@
 #feedback-form-page .content .card > svg {
     position: absolute;
     top: -28px;
+    width: 56px;
+    height: 56px;
 }
 
 #feedback-form-page .content h1 {

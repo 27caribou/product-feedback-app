@@ -1,27 +1,14 @@
 
-export function processText(text) {
-    switch (text) {
-        case "all":
-            return "All"
-        case "ui":
-            return "UI"
-        case "ux":
-            return "UX"
-        case "enhancement":
-            return "Enhancement"
-        case "bug":
-            return "Bug"
-        case "feature":
-            return "Feature"
-        case "planned":
-            return "Planned"
-        case "in-progress":
-            return "In-Progress"
-        case "live":
-            return "Live"
-        default:
-            return "Not found"
+// This is a capitalize function mostly relevant to this project, as it considers extra cases only relevant here
+export function capitalize(word) {
+    if ( word.length == 2 ){
+        return word.toUpperCase()
     }
+    if ( word.includes("-") ){
+        return word.split("-").map( subtext => subtext[0].toUpperCase() + subtext.slice(1).toLowerCase() ).join("-")
+    }
+
+    return word[0].toUpperCase() + word.slice(1).toLowerCase() // Normal base case
 }
 
 export function countComments(item) {

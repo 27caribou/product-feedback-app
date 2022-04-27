@@ -1,5 +1,5 @@
 import Icon from "./Icon";
-import { countComments, processText } from "../../Helpers";
+import { countComments, capitalize } from "../../Helpers";
 import { Link } from "react-router-dom";
 
 const SuggestionItem = ({ item, upvote, canUpvote, canRedirect }) => {
@@ -22,7 +22,7 @@ const SuggestionItem = ({ item, upvote, canUpvote, canRedirect }) => {
                         }
                     </h3>
                     <p>{ item.description }</p>
-                    <div className="elem">{ processText(item.category) }</div>
+                    <div className="elem">{ capitalize(item.category) }</div>
                 </div>
             </div>
             <div className="col">

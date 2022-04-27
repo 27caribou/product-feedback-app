@@ -22,10 +22,13 @@ const FeedbackPage = () => {
             setFeedback(data)
 
             // Remove loader
-            document.querySelector(".loader-wrapper").classList.add("hide")
-            setTimeout(() => {
-                setState("ready")
-            }, 450)
+            let loader = document.querySelector(".loader-wrapper")
+            if ( loader != null ){
+                loader.classList.add("hide")
+                setTimeout(() => {
+                    setState("ready")
+                }, 450)
+            }
         })
     }, [])
 
@@ -40,7 +43,12 @@ const FeedbackPage = () => {
 
     const postComment = () => {
         setState("updating")
-        let commentList = [ ...feedback.comments, { content: newComment, user: user } ]
+        let commentList
+        if ( feedback.comments == null ){
+            commentList = [{ content: newComment, user: user }]
+        } else {
+            commentList = [ ...feedback.comments, { content: newComment, user: user } ]
+        }
         updateRequest(id, { comments: commentList }).then(() => {
             feedback.comments = commentList
             setFeedback({ ...feedback })

@@ -7,7 +7,7 @@
   "productRequests": [
     {
       "id": 1,
-      "title": "Add tags for solutions",
+      "title": "Add TAGS for solutions",
       "category": "enhancement",
       "upvotes": 125,
       "status": "suggestion",
@@ -192,7 +192,7 @@
       "id": 6,
       "title": "Preview images not loading",
       "category": "bug",
-      "upvotes": 3,
+      "upvotes": 4,
       "status": "suggestion",
       "description": "Challenge preview images are missing when you apply a filter."
     },

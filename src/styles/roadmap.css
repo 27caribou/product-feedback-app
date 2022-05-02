@@ -1,0 +1,94 @@
+
+#roadmap-page .content {
+    width: 80%;
+    margin: 45px auto;
+}
+
+#roadmap-page .content .roadmap-header {
+    margin-bottom: 40px;
+    padding: 20px 25px;
+    border-radius: 10px;
+    background: #373F68;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.content .roadmap-header .custom-btn.return {
+    color: white;
+    padding: 5px 25px 5px 0;
+}
+
+.content .roadmap-header .custom-btn.return:after {
+    color: white;
+    top: 0;
+}
+
+#roadmap-page .content .request-groups {
+    display: flex;
+    justify-content: space-between;
+}
+
+.request-groups h4 {
+    margin: 5px 0;
+    color: var(--color-secondary);
+}
+.request-groups h4 a {
+    color: var(--color-secondary);
+    text-decoration: none;
+}
+.request-groups h4 a:hover {
+    color: var(--color-tertiary);
+}
+
+.request-groups > div {
+    width: 32%;
+}
+
+.request-groups .requests {
+    margin-top: 20px;
+}
+.request-groups .request ul {
+    padding-left: 14px;
+}
+
+.request-groups .planned-status .request {
+    border-top: 6px solid #F49F85;
+}
+.request-groups .planned-status .request li::marker {
+    color: #F49F85;
+}
+.request-groups .in-progress-status .request {
+    border-top: 6px solid #AD1FEA;
+}
+.request-groups .in-progress-status .request li::marker {
+    color: #AD1FEA;
+}
+.request-groups .live-status .request {
+    border-top: 6px solid #62BCFA;
+}
+.request-groups .live-status .request li::marker {
+    color: #62BCFA;
+}
+
+.request-groups .request .body p {
+    margin-bottom: 13px;
+}
+.request-groups .request .body .elem {
+    background-color: #F2F4FF;
+    cursor: initial;
+}
+
+.request-groups .request .buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 13px;
+}
+.request-groups .request .buttons .elem .votes {
+    flex-direction: row;
+}
+.request-groups .request .buttons .elem .votes span {
+    margin: 0 0 0 10px;
+}

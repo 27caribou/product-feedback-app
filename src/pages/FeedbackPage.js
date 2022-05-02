@@ -85,7 +85,7 @@ const FeedbackPage = () => {
     }
 
     const links = <div className="links">
-        <Link to="/">
+        <Link to={ feedback.status == "suggestion" ? "/" : "/roadmap" }>
             <button className="custom-btn return outline">Go Back</button>
         </Link>
         <Link to={`/edit-feedback/${id}`}>

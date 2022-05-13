@@ -23,15 +23,36 @@
 
 
 /* SIDEBAR */
-.sidebar .card {
+
+.sidebar-card {
+    border-radius: 10px;
+    display: inline-block;
+    width: 100%;
     padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+}
+
+.sidebar-card:nth-of-type(1) {
+    margin-bottom: 20px;
 }
 
 .sidebar .title {
     background-image: url('../images/background-header-desktop.png');
     background-size: cover;
     color: white;
-    padding-top: 50px;
+    padding-top: 60px;
+}
+.sidebar .title .title-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.title-inner .hamburger .bar {
+    background-color: white;
+}
+.title-inner .hamburger {
+    display: none;
 }
 
 .sidebar .categories {
@@ -43,6 +64,7 @@
 }
 
 .sidebar .roadmap .header {
+    color: var(--color-secondary);
     margin-bottom: 15px;
 }
 .sidebar .roadmap .list ul {
@@ -51,6 +73,10 @@
 .sidebar .roadmap .list li::marker {
     font-size: 18px;
 }
+.sidebar .roadmap .list .count {
+    font-weight: 600;
+}
+
 .sidebar .roadmap .list li:first-child::marker {
     color: #F49F85;
 }
@@ -60,9 +86,7 @@
 .sidebar .roadmap .list li:nth-child(3)::marker {
     color: #62BCFA;
 }
-.sidebar .roadmap .list .count {
-    font-weight: 600;
-}
+
 /* SIDEBAR - END */
 
 /* MAINBAR */
@@ -114,7 +138,7 @@
 
 .mainbar .no-feedback {
     text-align: center;
-    padding: 65px 200px;
+    padding: 100px 200px;
     line-height: 1.5;
 }
 .mainbar .no-feedback h2 {
@@ -127,3 +151,75 @@
 
 /* MAINBAR - END */
 
+/* RESPONSIVENESS */
+
+#suggestions-page .content {
+    max-width: 1100px;
+}
+
+@media (max-width: 768px) {
+
+    .card:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    #suggestions-page .content {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .sidebar, .mainbar {
+        width: 100%;
+    }
+
+    .sidebar, .sidebar-inner .cards {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .sidebar {
+        margin-bottom: 40px;
+    }
+
+    .sidebar-card:nth-of-type(1) {
+        margin-bottom: 0;
+    }
+
+    .sidebar .title {
+        width: 32%;
+        background-image: url('../images/background-header-tablet.png');
+        padding-top: 90px;
+    }
+
+    .sidebar-inner {
+        display: inline-block;
+        width: 66%;
+    }
+
+    .sidebar .categories, .sidebar .roadmap {
+        width: 48.5%;
+    }
+
+    .mainbar .header {
+        margin-bottom: 25px;
+    }
+
+    .mainbar .no-feedback {
+        padding: 110px 140px;
+    }
+
+    .mainbar .no-feedback p {
+        margin-bottom: 35px;
+    }
+
+}
+
+/* RESPONSIVENESS - END */
+
+
+@media (max-width: 768px) {
+
+
+
+
+}

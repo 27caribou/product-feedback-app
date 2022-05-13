@@ -17,6 +17,10 @@
     margin: 20px 0;
 }
 
+#feedback-page .comment {
+    padding: 30px 35px;
+}
+
 #feedback-page .content .post-comment textarea {
     margin: 20px 0;
     width: 100%;
@@ -26,3 +30,49 @@
     display: flex;
     justify-content: space-between;
 }
+
+
+/* RESPONSIVENESS */
+
+#feedback-page .content {
+    max-width: 655px;
+}
+
+@media (max-width: 1010px) {
+
+    #feedback-page .content {
+        width: 75%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    #feedback-page .content {
+        width: 92%;
+    }
+
+    #feedback-page .card {
+        margin: 25px 0 0;
+    }
+
+    .feedback-comment:not(.is-reply) {
+        padding: 35px 0;
+    }
+
+    .feedback-comment .body .replies:before {
+        width: 0.18%;
+    }
+
+}
+
+@media (max-width: 425px) {
+
+    #feedback-page .content {
+        width: 87%;
+        margin: 40px auto;
+    }
+
+}
+
+/* RESPONSIVENESS - END */

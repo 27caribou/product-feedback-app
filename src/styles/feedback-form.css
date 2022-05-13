@@ -1,6 +1,6 @@
 
 #feedback-form-page .content {
-    width: 40%;
+    width: 43%;
     margin: 70px auto;
 }
 
@@ -59,3 +59,29 @@
 #feedback-form-page .content .buttons a {
     margin-right: 15px;
 }
+
+
+/* RESPONSIVENESS */
+
+#feedback-form-page .content {
+    max-width: 490px;
+}
+
+@media (max-width: 980px) {
+
+    #feedback-form-page .content {
+        width: 65%;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    #feedback-form-page .content {
+        width: 70%;
+    }
+
+}
+
+/* RESPONSIVENESS - END */
+

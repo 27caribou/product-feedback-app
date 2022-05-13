@@ -7,6 +7,8 @@
     --color-secondary: #3A4374;
     --color-tertiary: #4661E6;
     --color-background: #EEF1FD;
+    --hamburge-size: 25px;
+    --hamburge-height: calc( var(--hamburge-size) * 0.8 );
 }
 
 * {
@@ -16,6 +18,7 @@
 
 body {
     background-color: var(--color-background);
+    min-width: 375px;
     /*background-color: khaki;*/
     font-size: var(--size-default);
     font-family: var(--font-default);
@@ -460,4 +463,44 @@ input[type=text].error, textarea.error {
 }
 
 /* COMMENT THREAD - END */
+
+/* HAMBURGER */
+
+.hamburger {
+    display: inline-block;
+    width: var(--hamburge-size);
+    height: var(--hamburge-height);
+    position: relative;
+}
+.hamburger .bar {
+    display: inline-block;
+    width: var(--hamburge-size);
+    height: calc( var(--hamburge-height) * 0.2 );
+    background-color: var(--color-secondary);
+    position: absolute;
+    transition: all 0.2s ease;
+}
+.hamburger .bar.top {
+    transform-origin: top left;
+}
+.hamburger .bar.mid {
+    top: 50%;
+    transform: translateY(-50%);
+}
+.hamburger .bar.bottom {
+    bottom: 0;
+    transform-origin: bottom left;
+}
+
+.hamburger.active .bar.top {
+    transform: translateX(6px) rotate(45deg);
+}
+.hamburger.active .bar.mid {
+    opacity: 0;
+}
+.hamburger.active .bar.bottom {
+    transform: translateX(6px) rotate(-45deg);
+}
+
+/* HAMBURGER - END */
 

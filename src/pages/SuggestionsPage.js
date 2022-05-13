@@ -86,12 +86,21 @@ const SuggestionsPage = () => {
     }
 
     // SIDEBAR SECTION
-    const titleCard = <div className="card title">
-        <h3>Frontend Mentor</h3>
-        <p>Feedback Board</p>
+    const titleCard = <div className="sidebar-card title">
+        <div className="title-inner">
+            <div>
+                <h2>Frontend Mentor</h2>
+                <p>Feedback Board</p>
+            </div>
+            <div className="hamburger" onClick={ e => e.target.closest(".hamburger").classList.toggle("active") }>
+                <div className="bar top"></div>
+                <div className="bar mid"></div>
+                <div className="bar bottom"></div>
+            </div>
+        </div>
     </div>
 
-    const categories = <div className="card categories">
+    const categories = <div className="sidebar-card categories">
         { ["all", "ui", "ux", "enhancement", "bug", "feature"].map( item =>
             <div key={item} className={`elem${ category == item ? " active" : ""}`} onClick={ () => setCategory(item) }>
                 {capitalize(item)}
@@ -99,7 +108,7 @@ const SuggestionsPage = () => {
         )}
     </div>
 
-    const roadmap = <div className="card roadmap">
+    const roadmap = <div className="sidebar-card roadmap">
         <div className="header">
             <h4>Roadmap</h4>
             <Link to="/roadmap">View</Link>
@@ -115,8 +124,12 @@ const SuggestionsPage = () => {
 
     const sidebar = <section className="sidebar">
         {titleCard}
-        {categories}
-        {roadmap}
+        <div className="sidebar-inner">
+            <div className="cards">
+                {categories}
+                {roadmap}
+            </div>
+        </div>
     </section>
 
     // MAINBAR SECTION

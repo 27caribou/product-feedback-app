@@ -51,6 +51,7 @@
 }
 .request-groups .request ul {
     padding-left: 14px;
+    font-size: calc( var(--size-default) - 1px );
 }
 
 .request-groups .planned-status .request {
@@ -92,3 +93,35 @@
 .request-groups .request .buttons .elem .votes span {
     margin: 0 0 0 10px;
 }
+
+
+/* RESPONSIVENESS */
+
+#roadmap-page .content {
+    max-width: 1150px;
+}
+
+@media (max-width: 768px) {
+
+    #roadmap-page .content {
+        width: 89%;
+    }
+
+    .card.request {
+        padding: 25px 20px;
+    }
+
+    .request h4 {
+        margin: 12px 0;
+        font-size: var(--size-default);
+    }
+
+    .request-groups .request .body p {
+        margin-bottom: 18px;
+        font-size: calc( var(--size-default) - 1px );
+    }
+
+}
+
+/* RESPONSIVENESS - END */
+

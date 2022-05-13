@@ -56,6 +56,14 @@ const Test = () => {
                 <button className="custom-btn return outline">Button 6</button>
             </div>
             <br/>
+            <div>
+                <div className="hamburger" onClick={ e => e.target.closest(".hamburger").classList.toggle("active") }>
+                    <div className="bar top"></div>
+                    <div className="bar mid"></div>
+                    <div className="bar bottom"></div>
+                </div>
+            </div>
+            <br/>
             <div style={{ backgroundColor: "white", padding: "20px" }}>
                 <h4>Elems</h4>
                 <br/>

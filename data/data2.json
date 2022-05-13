@@ -28,6 +28,14 @@
             "name": "Thomas Hood",
             "username": "brawnybrave"
           }
+        },
+        {
+          "content": "This looks interesting...",
+          "user": {
+            "image": "image-zena.jpg",
+            "name": "Zena Kelley",
+            "username": "velvetround"
+          }
         }
       ]
     },
@@ -244,7 +252,7 @@
       "id": 9,
       "title": "One-click portfolio generation",
       "category": "feature",
-      "upvotes": 66,
+      "upvotes": 67,
       "status": "in-progress",
       "description": "Add ability to create professional looking portfolio from profile.",
       "comments": [

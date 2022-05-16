@@ -9,7 +9,7 @@
       "id": 1,
       "title": "Add TAGS for solutions",
       "category": "enhancement",
-      "upvotes": 125,
+      "upvotes": 131,
       "status": "suggestion",
       "description": "Easier to search for solutions based on a specific stack.",
       "comments": [
@@ -118,7 +118,7 @@
       "id": 3,
       "title": "Q&A within the challenge hubs",
       "category": "feature",
-      "upvotes": 70,
+      "upvotes": 71,
       "status": "suggestion",
       "description": "Challenge-specific Q&A would make for easy reference.",
       "comments": [
@@ -200,7 +200,7 @@
       "id": 6,
       "title": "Preview images not loading",
       "category": "bug",
-      "upvotes": 4,
+      "upvotes": 10,
       "status": "suggestion",
       "description": "Challenge preview images are missing when you apply a filter."
     },

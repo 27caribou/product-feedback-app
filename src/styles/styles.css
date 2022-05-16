@@ -214,6 +214,7 @@ input[type=text].error, textarea.error {
 
 .votes span {
     color: var(--color-secondary);
+    font-weight: 800;
     margin: 10px -5px 0;
 }
 
@@ -372,6 +373,30 @@ input[type=text].error, textarea.error {
 .feedback .feedback-body .elem:hover {
     background-color: #F2F4FF;
     cursor: initial;
+}
+
+@media (max-width: 425px) {
+    /* MAKING FEEDBACK CARDS LIKE ROADMAP CARDS */
+    .feedback {
+        column-gap: 0;
+        row-gap: 15px;
+    }
+
+    .feedback .col:nth-of-type(2) {
+        grid-column-start: 1;
+        grid-column-end: 12;
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+    .feedback .col:nth-of-type(1) {
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+    .feedback .col:nth-of-type(3) {
+        grid-column-start: 9;
+        grid-row-start: 3;
+    }
+    /* MAKING FEEDBACK CARDS LIKE ROADMAP CARDS - END */
 }
 
 /* FEEDBACK CARD - END */

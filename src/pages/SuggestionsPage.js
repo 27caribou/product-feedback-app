@@ -92,7 +92,10 @@ const SuggestionsPage = () => {
                 <h2>Frontend Mentor</h2>
                 <p>Feedback Board</p>
             </div>
-            <div className="hamburger" onClick={ e => e.target.closest(".hamburger").classList.toggle("active") }>
+            <div className="hamburger" onClick={ e => {
+                e.target.closest(".hamburger").classList.toggle("active")
+                e.target.closest(".title").nextSibling.classList.toggle("show")
+            } }>
                 <div className="bar top"></div>
                 <div className="bar mid"></div>
                 <div className="bar bottom"></div>

@@ -79,6 +79,64 @@
 
     #feedback-form-page .content {
         width: 70%;
+        margin: 55px auto;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    #feedback-form-page .content {
+        width: 77%;
+    }
+
+}
+
+@media (max-width: 425px) {
+
+    #feedback-form-page .content {
+        width: 87%;
+        margin: 35px auto;
+    }
+
+    #feedback-form-page .content .card {
+        padding: 30px;
+    }
+
+    #feedback-form-page .content .field p {
+        margin-bottom: 20px;
+    }
+
+    #feedback-form-page .content .buttons button {
+        width: 100%;
+    }
+
+    #feedback-form-page .content .buttons {
+        justify-content: normal;
+        flex-direction: column;
+    }
+
+    #feedback-form-page .content .buttons a {
+        margin: 20px 0 0;
+    }
+
+    #feedback-form-page .content .buttons div:nth-of-type(1) {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    #feedback-form-page .content .buttons div:nth-of-type(2) {
+        margin-top: 20px;
+    }
+
+
+
+}
+
+@media (max-width: 340px) {
+
+    #feedback-form-page .content h1 {
+        font-size: calc( var(--size-default) + 5px );
     }
 
 }

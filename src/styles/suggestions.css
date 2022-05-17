@@ -41,7 +41,9 @@
     background-image: url('../images/background-header-desktop.png');
     background-size: cover;
     color: white;
-    padding-top: 60px;
+    display: flex;
+    align-items: flex-end;
+    min-height: 130px;
 }
 .sidebar .title .title-inner {
     display: flex;
@@ -93,6 +95,10 @@
 /* SIDEBAR - END */
 
 /* MAINBAR */
+
+.mainbar {
+    position: relative;
+}
 
 .mainbar .header {
     background-color: #373F68;
@@ -163,6 +169,45 @@
     max-width: 1100px;
 }
 
+@media (max-width: 1024px) {
+
+    .feedback-body h3 {
+        font-size: calc( var(--size-default) + 1px );
+    }
+
+    .mainbar .no-feedback {
+        padding: 100px 130px;
+    }
+
+}
+
+@media (max-width: 990px) {
+
+    .sidebar .title {
+        min-height: 170px;
+    }
+
+}
+
+@media (max-width: 895px) {
+
+    #suggestions-page .content {
+        width: 85%;
+    }
+
+    .mainbar .header .suggestions-number {
+        margin-right: 15px;
+    }
+
+    .mainbar .header .suggestions-number svg {
+        display: none;
+    }
+
+    .mainbar .header .suggestions-number span {
+        margin-left: 5px;
+    }
+}
+
 @media (max-width: 768px) {
 
     .card:not(:last-child) {
@@ -194,7 +239,6 @@
     .sidebar .title {
         width: 32%;
         background-image: url('../images/background-header-tablet.png');
-        padding-top: 90px;
     }
 
     .sidebar-inner {
@@ -210,6 +254,14 @@
         margin-bottom: 25px;
     }
 
+    .mainbar .header .suggestions-number svg {
+        display: initial;
+    }
+
+    .mainbar .header .suggestions-number span {
+        margin-left: 14px;
+    }
+
     .mainbar .no-feedback {
         padding: 110px 140px;
     }
@@ -220,11 +272,48 @@
 
 }
 
-@media (max-width: 425px) {
+@media (max-width: 584px) {
 
-    :root {
-        --size-default: 13px;
+    .mainbar .custom-btn {
+        padding: 10px 15px;
     }
+
+    .mainbar .header .suggestions-number svg {
+        display: none;
+    }
+    .mainbar .header .suggestions-number span {
+        margin-left: 5px;
+    }
+    .mainbar .header .custom-select .current-option {
+        padding: 12px;
+    }
+
+}
+
+@media (max-width: 525px) {
+
+    #suggestions-page .content {
+        width: 93%;
+    }
+
+    .mainbar .header .suggestions-number {
+        display: none;
+    }
+    .mainbar .header .sort {
+        margin-left: 5px;
+    }
+
+    .sidebar .sidebar-inner .elem {
+        padding: 7px 9px;
+    }
+
+    .mainbar .no-feedback {
+        padding: 100px;
+    }
+
+}
+
+@media (max-width: 425px) {
 
     #suggestions-page .content {
         margin: 0;
@@ -249,6 +338,11 @@
         padding: 15px 25px;
         display: block;
         position: relative;
+        min-height: initial;
+    }
+    .sidebar .title.active {
+        position: fixed;
+        z-index: 10;
     }
     .title-inner .hamburger {
         display: initial;
@@ -258,11 +352,14 @@
         z-index: 10;
         position: fixed;
         background-color: rgba(50, 50, 50, 0.5);
-        height: 100vh;
+        bottom: 0;
         transform: scale(0);
         opacity: 0;
         transform-origin: right;
         transition: opacity 0.2s ease;
+    }
+    .sidebar .sidebar-inner, .mainbar.active {
+        top: 81px;
     }
     .sidebar .sidebar-inner.show {
         transform: scale(1);
@@ -277,7 +374,7 @@
         margin-left: auto;
         box-sizing: border-box;
         padding: 30px;
-        width: 75%;
+        width: 85%;
         transform: translateX(100%);
         transition: all 0.3s ease;
     }
@@ -317,12 +414,6 @@
         padding: 10px 25px;
         margin: 0;
     }
-    .mainbar .header .suggestions-number {
-        display: none;
-    }
-    .mainbar .custom-btn {
-        padding: 10px 15px;
-    }
 
     .mainbar .suggestions {
         padding: 30px 25px;
@@ -357,6 +448,40 @@
         font-size: calc( var(--size-default) + 2px );
     }
 
+}
+
+@media (max-width: 375px) {
+
+    .sidebar .sidebar-inner .elem {
+        font-size: calc( var(--size-default) );
+        padding: 7px 15px;
+    }
+    .sidebar .roadmap h4 {
+        font-size: calc( var(--size-default) + 3px );
+    }
+    .sidebar .roadmap a {
+        font-size: calc( var(--size-default) + 2px );
+    }
+    .sidebar .roadmap .list {
+        font-size: calc( var(--size-default) + 3px );
+    }
+
+    .mainbar .header .sort > span {
+        display: none;
+    }
+
+    .mainbar .header .custom-select .current-option {
+        padding: 12px 0;
+    }
+
+    .mainbar .header .custom-select .dropdown {
+        margin-top: 27px;
+        left: -10%;
+    }
+
+    .card:not(:last-child) {
+        margin-bottom: 20px;
+    }
 
 }
 

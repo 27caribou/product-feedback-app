@@ -52,16 +52,16 @@
         width: 92%;
     }
 
+    #feedback-page .content .card h3 {
+        font-size: calc( var(--size-default) + 4px );
+    }
+
     #feedback-page .card {
         margin: 25px 0 0;
     }
 
     .feedback-comment:not(.is-reply) {
         padding: 35px 0;
-    }
-
-    .feedback-comment .body .replies:before {
-        width: 0.18%;
     }
 
 }
@@ -71,6 +71,41 @@
     #feedback-page .content {
         width: 87%;
         margin: 40px auto;
+    }
+
+    .custom-btn {
+        padding: 10px 17px;
+    }
+
+    #feedback-page .content .card h3 {
+        font-size: calc( var(--size-default) + 5px );
+    }
+
+    #feedback-page .content .feedback-body h3 {
+        font-size: calc( var(--size-default) + 2px );
+    }
+
+    #feedback-page .content .feedback {
+        margin: 30px 0;
+    }
+
+
+
+}
+
+@media (max-width: 375px) {
+
+    #feedback-page .content .post-comment textarea {
+        margin: 20px 0 10px;
+    }
+
+    #feedback-page .content .post-comment div {
+        justify-content: normal;
+        flex-direction: column;
+    }
+
+    #feedback-page .content .post-comment div button {
+        margin-top: 15px;
     }
 
 }

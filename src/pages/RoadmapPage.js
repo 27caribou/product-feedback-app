@@ -9,6 +9,7 @@ const RoadmapPage = () => {
 
     const [ state, setState ] = useState("fetching")
     const [ data, setData ] = useState({})
+    const [ currentStatus, setCurrentStatus ] = useState('in-progress')
 
     useEffect(() => {
         getRequests().then( data => {
@@ -86,11 +87,32 @@ const RoadmapPage = () => {
         </div>
     )
 
+    const changeStatus = (e, status) => {
+        let container = e.target.parentElement
+        let prevSelected = container.querySelector(".option.selected")
+
+        if ( prevSelected != e.target ){
+            prevSelected.classList.remove("selected")
+            e.target.classList.add("selected")
+            setCurrentStatus(status)
+        }
+    }
+
+    const statusSelect = <div className="status-options">
+        { Object.keys(data).map( status =>
+            <div key={status} className={`option${ currentStatus == status ? " selected" : "" }`} onClick={ e => changeStatus(e, status) }>
+                {capitalize(status)} ({data[status].length})
+            </div>
+        ) }
+    </div>
+
+
     const content = <div className="content">
         {header}
+        {statusSelect}
         <div className="request-groups">
             { Object.keys(data).map( status =>
-                <div key={status} className={`${status}-status`}>
+                <div key={status} className={`${status}-status${ currentStatus == status ? " show" : "" }`}>
                     <h4>{`${capitalize(status)} (${data[status].length})`}</h4>
                     <p>{
                         status == "planned"

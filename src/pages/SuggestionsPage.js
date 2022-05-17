@@ -94,7 +94,10 @@ const SuggestionsPage = () => {
             </div>
             <div className="hamburger" onClick={ e => {
                 e.target.closest(".hamburger").classList.toggle("active")
-                e.target.closest(".title").nextSibling.classList.toggle("show")
+
+                document.querySelector(".sidebar-inner").classList.toggle("show")
+                document.querySelector(".title").classList.toggle("active")
+                document.querySelector(".mainbar").classList.toggle("active")
             } }>
                 <div className="bar top"></div>
                 <div className="bar mid"></div>

@@ -1,10 +1,11 @@
 
 // Using a JSON Server
-var url = "http://localhost:8000/productRequests"
-var userData = "http://localhost:8000/currentUser"
+var base = "https://product-feedback-appli.herokuapp.com/api"
+// var base = "http://localhost:8000"
+var url = base + "/productRequests"
 
 export async function getUserdata(){
-    const response = await fetch(userData)
+    const response = await fetch( base + "/currentUser" )
         .then( res => {
             return res.json()
         })

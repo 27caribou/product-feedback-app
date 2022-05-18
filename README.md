@@ -36,11 +36,26 @@ Users should be able to:
 
 In case you want to try running it locally:
 
+### `npm install`
 
+Installs the project dependencies.
+
+### `npm run server`
+
+This will launch the JSON server.
+It should show in the command prompt, but you can open [http://localhost:8000](http://localhost:8000) followed by the routing parameter to view the data. 
+
+### `npm start`
+
+Runs the app in the development mode.<br>
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.<br>
+You will also see any lint errors in the console.
 
 
 ## Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
+- [Codevolution](https://www.youtube.com/playlist?list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3) - This series is perfect if you want to refresh your memory on a few React concepts.
+- [The Net Ninja](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gZD-Tvwfod2gaISzfRiP9d) - Another good tutorial series, though I focused more on the API side of it. I liked the way he introduced the use of json-server and how well he implemented it. I really recommend using json-server if you need a quick back-end for your project.
 

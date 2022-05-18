@@ -1,7 +1,7 @@
 import "../styles/feedback.css";
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getRequest, getUserdata, updateRequest } from "../Server";
+import { getRequest, getUserdata, updateRequest } from "../APICalls";
 import SuggestionItem from "./components/SuggestionItem";
 import { countComments } from "../Helpers";
 import Comment from "./components/Comment";

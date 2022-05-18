@@ -4,6 +4,7 @@ import SuggestionsPage from "./pages/SuggestionsPage";
 import FeedbackPage from "./pages/FeedbackPage";
 import RoadmapPage from "./pages/RoadmapPage";
 import FeedbackFormPage from "./pages/FeedbackFormPage";
+import NotFound from "./pages/NotFound";
 
 function App() {
     // CONSIDER CASE WHEN WRONG URL IS PASSED
@@ -25,6 +26,9 @@ function App() {
                     </Route>
                     <Route exact path="/edit-feedback/:id">
                         <FeedbackFormPage />
+                    </Route>
+                    <Route path="*">
+                        <NotFound />
                     </Route>
                 </Switch>
             </div>

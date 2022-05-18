@@ -1,7 +1,7 @@
 import "../styles/suggestions.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { getRequests, updateRequest } from "../Server";
+import { getRequests, updateRequest } from "../APICalls";
 import { countComments, capitalize } from "../Helpers";
 import Icon from "./components/Icon";
 import CustomSelect from "./components/CustomSelect";

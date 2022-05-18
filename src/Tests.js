@@ -1,4 +1,4 @@
-import { getRequest, getRequests, postRequest, updateRequest } from "./Server";
+import { getRequest, getRequests, postRequest, updateRequest } from "./APICalls";
 import { useEffect } from "react";
 import Icon from "./pages/components/Icon";
 import CustomSelect from "./pages/components/CustomSelect";

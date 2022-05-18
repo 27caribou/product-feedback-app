@@ -3,7 +3,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import CustomSelect from "./components/CustomSelect";
 import Icon from "./components/Icon";
-import { deleteRequest, getRequest, postRequest, updateRequest } from "../Server";
+import { deleteRequest, getRequest, postRequest, updateRequest } from "../APICalls";
 import { capitalize } from "../Helpers";
 
 const FeedbackFormPage = () => {

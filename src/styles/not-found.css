@@ -1,0 +1,37 @@
+
+#not-found {
+    width: 55%;
+    margin: 80px auto;
+}
+
+#not-found svg {
+    width: 250px;
+    height: 250px;
+}
+
+#not-found h1 {
+    margin: 20px 0 30px;
+    color: var(--color-secondary);
+    font-size: calc( var(--size-default) + 19px );
+}
+
+#not-found p, #not-found a {
+    font-size: calc( var(--size-default) + 3px );
+}
+
+@media (max-width: 768px) {
+
+    #not-found {
+        width: 100%;
+        text-align: center;
+    }
+
+}
+
+@media (max-width: 425px) {
+
+    #not-found h1 {
+        font-size: calc( var(--size-default) + 15px );
+    }
+
+}

@@ -84,6 +84,14 @@
 
 }
 
+@media (max-width: 600px) {
+
+    #feedback-form-page .content .buttons button {
+        padding: 11px;
+    }
+
+}
+
 @media (max-width: 500px) {
 
     #feedback-form-page .content {

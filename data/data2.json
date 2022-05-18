@@ -136,7 +136,7 @@
       "id": 4,
       "title": "Add image/video upload to feedback",
       "category": "enhancement",
-      "upvotes": 55,
+      "upvotes": 73,
       "status": "suggestion",
       "description": "Images and screencasts can enhance comments on solutions.",
       "comments": [
@@ -316,6 +316,24 @@
                 "name": "Suzanne Chang",
                 "username": "upbeat1811"
               }
+            },
+            {
+              "content": "Here we Go!",
+              "user": {
+                "image": "image-zena.jpg",
+                "name": "Zena Kelley",
+                "username": "velvetround"
+              },
+              "replyingTo": "upbeat1811"
+            },
+            {
+              "content": "I agree with that statement",
+              "user": {
+                "image": "image-zena.jpg",
+                "name": "Zena Kelley",
+                "username": "velvetround"
+              },
+              "replyingTo": "arlen_the_marlin"
             }
           ]
         }

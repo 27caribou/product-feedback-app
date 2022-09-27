@@ -107,28 +107,31 @@ const RoadmapPage = () => {
     </div>
 
 
-    const content = <div className="content">
-        {header}
-        {statusSelect}
-        <div className="request-groups">
-            { Object.keys(data).map( status =>
-                <div key={status} className={`${status}-status${ currentStatus == status ? " show" : "" }`}>
-                    <h4>{`${capitalize(status)} (${data[status].length})`}</h4>
-                    <p>{
-                        status == "planned"
-                            ? "Ideas prioritized for research"
-                            : (status == "live"
-                                ? "Released features"
-                                : "Currently being developed"
-                            )
-                    }</p>
-                    <div className="requests">
-                        { data[status].map( request => renderItem(request, status) )}
+    const content = <>
+        <div className="content">
+            {header}
+            {statusSelect}
+            <div className="request-groups">
+                { Object.keys(data).map( status =>
+                    <div key={status} className={`${status}-status${ currentStatus == status ? " show" : "" }`}>
+                        <h4>{`${capitalize(status)} (${data[status].length})`}</h4>
+                        <p>{
+                            status == "planned"
+                                ? "Ideas prioritized for research"
+                                : (status == "live"
+                                        ? "Released features"
+                                        : "Currently being developed"
+                                )
+                        }</p>
+                        <div className="requests">
+                            { data[status].map( request => renderItem(request, status) )}
+                        </div>
                     </div>
-                </div>
-            ) }
+                ) }
+            </div>
         </div>
-    </div>
+        <div className="credit">© 2022 Teddy N'go</div>
+    </>
 
     return <div id="roadmap-page">
         { state == "fetching" ? <div className="loader-wrapper"><div className="loader"></div></div> : content }

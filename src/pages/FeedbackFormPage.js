@@ -139,20 +139,23 @@ const FeedbackFormPage = () => {
         </div> }
     </div>
 
-    const content = <div className="content">
-        <Link to={ id != null ? `/feedback/${id}` : "/" }>
-            <button className="custom-btn return outline">Go Back</button>
-        </Link>
-        <div className="card">
-            { id == null ? <Icon name="new-feedback"/> : <Icon name="edit-feedback"/> }
-            <h1>{heading}</h1>
-            {titleField}
-            {categoryField}
-            { id != null && statusField}
-            {detailField}
-            {buttons}
+    const content = <>
+        <div className="content">
+            <Link to={ id != null ? `/feedback/${id}` : "/" }>
+                <button className="custom-btn return outline">Go Back</button>
+            </Link>
+            <div className="card">
+                { id == null ? <Icon name="new-feedback"/> : <Icon name="edit-feedback"/> }
+                <h1>{heading}</h1>
+                {titleField}
+                {categoryField}
+                { id != null && statusField}
+                {detailField}
+                {buttons}
+            </div>
         </div>
-    </div>
+        <div className="credit">© 2022 Teddy N'go</div>
+    </>
 
     return <div id="feedback-form-page">
         { state == "fetching" ? <div className="loader-wrapper"><div className="loader"></div></div> : content }

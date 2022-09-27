@@ -31,7 +31,6 @@ function App() {
                         <NotFound />
                     </Route>
                 </Switch>
-                <div className="credit">© 2022 Teddy N'go</div>
             </div>
         </Router>
     );

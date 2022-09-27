@@ -115,12 +115,15 @@ const FeedbackPage = () => {
         </div>
     </div>
 
-    const content = <div className="content">
-        {links}
-        <SuggestionItem item={feedback} upvote={upvoteSuggestion} canUpvote={ state == "ready" } />
-        {comments}
-        {replyForm}
-    </div>
+    const content = <>
+        <div className="content">
+            {links}
+            <SuggestionItem item={feedback} upvote={upvoteSuggestion} canUpvote={ state == "ready" } />
+            {comments}
+            {replyForm}
+        </div>
+        <div className="credit">© 2022 Teddy N'go</div>
+    </>
 
     return <div id="feedback-page">
         { state == "fetching" ? <div className="loader-wrapper"><div className="loader"></div></div> : content }

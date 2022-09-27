@@ -180,10 +180,13 @@ const SuggestionsPage = () => {
     </section>
 
 
-    const content = <div className="content">
-        {sidebar}
-        {mainbar}
-    </div>
+    const content = <>
+        <div className="content">
+            {sidebar}
+            {mainbar}
+        </div>
+        <div className="credit">© 2022 Teddy N'go</div>
+    </>
 
     return <div id="suggestions-page">
         { state == "fetching" ? <div className="loader-wrapper"><div className="loader"></div></div> : content }

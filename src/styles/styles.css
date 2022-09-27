@@ -84,6 +84,13 @@ input[type=text].error, textarea.error {
 
 /* GENERAL - END */
 
+div.credit {
+    text-align: center;
+    background-color: #373F68;
+    color: white;
+    padding: 10px 0;
+    font-size: var(--size-default);
+}
 
 .card {
     padding: 30px;

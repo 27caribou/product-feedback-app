@@ -2,7 +2,7 @@
 
 This is a full-stack application (built using React.js and JSON Server) that enables users to post any feedback they have about a certain product, sort and filter other requests by category, and interact with other users on the site by commenting on requests posted on the site.
 
-You can check out my work "here".
+You can check out my work [here](https://product-feedback-appli.herokuapp.com).
 
 It is a solution to the [Product feedback app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-feedback-app-wbvUYqjR6).
 

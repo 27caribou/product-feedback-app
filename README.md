@@ -2,7 +2,7 @@
 
 This is a full-stack application (built using React.js and JSON Server) that enables users to post any feedback they have about a certain product, sort and filter other requests by category, and interact with other users on the site by commenting on requests posted on the site.
 
-You can check out my work [here](https://product-feedback-appli.herokuapp.com).
+You can check out my work [here](https://product-feedback-tngo.netlify.app).
 
 It is a solution to the [Product feedback app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/product-feedback-app-wbvUYqjR6).
 
@@ -43,7 +43,9 @@ Installs the project dependencies.
 ### `npm run server`
 
 This will launch the JSON server.
-It should show in the command prompt, but you can open [http://localhost:8000](http://localhost:8000) followed by the routing parameter to view the data. 
+It should show in the command prompt, but you can open [http://localhost:8000](http://localhost:8000) followed by the routing parameter to view the data.
+
+**UPDATE: Netlify does not support json-server, hence I had to hardcode the link to the json server now on Vercel. To use the local server, you need to go to `src/APICalls.js`, and commenting line 3 and uncommenting line 4 (`var base`).**
 
 ### `npm start`
 

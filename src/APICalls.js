@@ -1,7 +1,7 @@
 
 // Using a JSON Server
-var base = "https://product-feedback-appli.herokuapp.com/api"
-// var base = "http://localhost:8000"
+// var base = "https://product-feedback-appli.herokuapp.com/api"
+var base = "http://localhost:8000"
 var url = base + "/productRequests"
 
 export async function getUserdata(){
